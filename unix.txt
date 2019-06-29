@@ -1,3 +1,7 @@
+https://yaksha.online/publicTest?&testId=91346&companyId=IH
+-------------------------------------------------------------------------------------
+
+
 Linux is an open-source operating system. 
 Unix is also an operating system like Linux. It is an commercial OS. 
 
@@ -85,7 +89,7 @@ time :- to view the time
 cmp file1 file2 :- Compare two files (0­identical)(1­different)(2­inaccessible)
 10)ls [options] [names] 
 
-­a     list all files, including the hidden . files. -d     list only directory information, not its contents. Used with ­l. h     human readable, using abbreviations for kilobyte, megabyte, etc. k     size in kilobytes l     long format list (includes permissions, owner, size, modification time, etc). r     list files in reverse order (by name or by time). R    recursively list subdirectories. s      list size in blocks (1block = 512 KB) t     list files according to modification time (newest first) u    list files according to the file access time.
+­a     list all files, including the hidden . files. --d     list only directory information, not its contents. Used with ­l. -h     human readable, using abbreviations for kilobyte, megabyte, etc. -k     size in kilobytes -l     long format list (includes permissions, owner, size, modification time, etc). -r     list files in reverse order (by name or by time). -R    recursively list subdirectories. s      list size in blocks (1block = 512 KB) -t     list files according to modification time (newest first) -u    list files according to the file access time.
 --------------------------
 11)cp file1 file2 
 12) vi editor
@@ -96,10 +100,17 @@ A	Start typing at the end of current line
 o	Start typing on a new line after the current line
 O	Start typing on a new line before the current line
 --------------------------------------------------------------------------------------
+to encrypt
+gpg -c first
+---------------------------------
+To decrypt file :
+gpg --output <new filename> --decrypt <filename>.gpg
+-------------------------------------------------------------
+to install a file
+----------------------
+1) sudo add-apt-repository ppa:webupd8team/java
 
-
-
-
+2)sudo apt-get update && sudo apt-get install oracle-java8-installer
 
 
 
