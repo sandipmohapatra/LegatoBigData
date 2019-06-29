@@ -77,19 +77,29 @@ Examples: chmod u+x file (add permission to the user to execute the file) chmod 
 -----------------------------------------------
 cmp file1 file2 Compare two files (0­identical)(1­different)(2­inaccessible) 
 ----------------------------------------------------------
------------------
 clear:- clear the terminal display 
-
 date :- to view the date
-
 time :- to view the time
 
-cmp file1 file2 :- Compare two files (0­identical)(1­different)(2­inaccessible)
 
+cmp file1 file2 :- Compare two files (0­identical)(1­different)(2­inaccessible)
 10)ls [options] [names] 
 
 ­a     list all files, including the hidden . files. -d     list only directory information, not its contents. Used with ­l. h     human readable, using abbreviations for kilobyte, megabyte, etc. k     size in kilobytes l     long format list (includes permissions, owner, size, modification time, etc). r     list files in reverse order (by name or by time). R    recursively list subdirectories. s      list size in blocks (1block = 512 KB) t     list files according to modification time (newest first) u    list files according to the file access time.
 --------------------------
+11)cp file1 file2 
+12) vi editor
+i	Start typing before the current character
+I	Start typing at the start of current line
+a	Start typing after the current character
+A	Start typing at the end of current line
+o	Start typing on a new line after the current line
+O	Start typing on a new line before the current line
+--------------------------------------------------------------------------------------
+
+
+
+
 
 
 
