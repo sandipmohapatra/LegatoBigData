@@ -20,7 +20,15 @@ cat <filename>
 to view the list of files and directory present under a directory
 ls - l
 ---------------------------------------------
- 
+https://github.com/sandipmohapatra/LegatoBigData
+------------------------------------------------
+cat file1 file2 > files Combine file1 and file2 into files 
+------------------------------------------------------------------
+cat file1 >> file2 Append file1 at the end of file2 
+--------------------------------------------------------------------------
+
+
+
 
 
 
