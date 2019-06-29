@@ -1,0 +1,35 @@
+to create directory
+mkdir <directory name>
+-------------------------------------------
+to change directory
+cd <directory name>
+---------------------------------------------
+to come out of the directory
+cd ..
+----------------------------------------
+to create a file
+vi <filename>
+to insert data
+press insert 
+to save and exit 
+esc :wq
+--------------------------------------
+to view the data
+cat <filename>
+-----------------------------------
+to view the list of files and directory present under a directory
+ls - l
+---------------------------------------------
+ 
+
+
+
+
+
+
+
+
+
+
+
+
