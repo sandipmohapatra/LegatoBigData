@@ -26,7 +26,17 @@ cat file1 file2 > files Combine file1 and file2 into files
 ------------------------------------------------------------------
 cat file1 >> file2 Append file1 at the end of file2 
 --------------------------------------------------------------------------
+chmod [options] mode files
 
+Change the access mode of one or more files. 
+Only the owner or privileged user may change its mode. 
+Create mode by concatenating who, opcode and  permission.
+who (u­ user)(g­group)(o­other)(a­all) opcode (+ add permission)
+(­remove permission)(= assign permission, and  remove from the not assigned) permission (r or 4 – read)(w or 2 – write)(x or 1 – execute)
+
+Examples: chmod u+x file (add permission to the user to execute the file) chmod 751 file (chmod u=rwx, g=rx, o=x file) 
+
+-----------------------------------------------
 
 
 
