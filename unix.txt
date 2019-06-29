@@ -99,6 +99,23 @@ a	Start typing after the current character
 A	Start typing at the end of current line
 o	Start typing on a new line after the current line
 O	Start typing on a new line before the current line
+j	To move down
+k	To move up
+h	To move left
+l	To move right
+x	Delete the current character
+X	Delete the character before the cursor
+r	Replace the current character
+xp	Switch two characters
+dd	Delete the current line
+D	Delete the current line from current character to the end of the line
+dG	delete from the current line to the end of the file
+u	Undo the last command
+.	Repeat the last command
+dd	Delete a line
+yy	(yank yank) copy a line
+p	Paste after the current line
+P	Paste before the current line
 --------------------------------------------------------------------------------------
 to encrypt
 gpg -c first
@@ -106,12 +123,6 @@ gpg -c first
 To decrypt file :
 gpg --output <new filename> --decrypt <filename>.gpg
 -------------------------------------------------------------
-to install a file
-----------------------
-1) sudo add-apt-repository ppa:webupd8team/java
-
-2)sudo apt-get update && sudo apt-get install oracle-java8-installer
-
 
 
 
