@@ -1,7 +1,3 @@
-https://yaksha.online/publicTest?&testId=91346&companyId=IH
--------------------------------------------------------------------------------------
-
-
 Linux is an open-source operating system. 
 Unix is also an operating system like Linux. It is an commercial OS. 
 
@@ -123,6 +119,56 @@ gpg -c first
 To decrypt file :
 gpg --output <new filename> --decrypt <filename>.gpg
 -------------------------------------------------------------
+cal - display the calander
+--------------------------------------------
+cal <month> <year>- display the calander and year
+---------------------------------------------------------------------------
+grep :- to search the content in a file
+
+grep <text> <filename>
+-------------------------------------------------------
+cat <filename> | grep text
+--------------------------------------------------
+The 'grep -v' command displays lines not matching to the specified word.
+-----------------------------------------------------------
+The 'grep -i' command filters output in a case-insensitive way.
+--------------------------------------------------------------------------------
+word count
+------------------------------------------------------------------------------
+wc <fileName>         (Counts line,words and characters)  
+wc -l <fileName>      (Counts only lines)  
+wc -w <fileName>     (Counts only words)  
+wc -c <fileName>      (Counts only characters)  
+--------------------------------------------------------------------------------------
+pwd :- displays your location currently you are working on.
+----------------------------------------------------------------------------
+rmdir <dirname> :-delete a directory
+There should not be any files inside it.if file is present you have to enter into the directory .Delete the files.come out of the directory and delete the directory.
+* to remove file (rm <filename>)
+----------------------------------------------------------------
+cut 
+----------
+cut -d(delimiter) -f(columnNumber) <fileName>  
+
+cut -d- -f(columnNumber) <fileName>  
+
+cut -d- -f2 first.txt  
+cut -d- -f1 first.txt  
+
+------------------------------------
+The 'comm' command compares two files . 
+'comm' will always display three columns.
+First column indicates non-matching items of first file, 
+second column indicates non-matching items of second file, 
+and third column indicates matching items of both the files.
+Both the files has to be in sorted order for 'comm' command to be executed.
+
+comm <file1> <file2>
+----------------------------------------------
+
+
+
+
 
 
 
