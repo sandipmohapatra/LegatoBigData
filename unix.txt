@@ -213,7 +213,7 @@ k@laptop:~$ sudo addgroup hadoop
 Adding user
 k@laptop:~$ sudo adduser --ingroup hadoop hduser
 ------------------------------------------------------------------------------
-Installing SSH
+Installing SSH(protocal to communicate between master and slave) 
 ssh : The command we use to connect to remote machines and the client.
 sshd : The daemon that is running on the server and allows clients to connect to the server.
 
