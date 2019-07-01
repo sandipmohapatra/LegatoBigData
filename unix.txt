@@ -239,7 +239,7 @@ ssh-keygen -t rsa -P ""
 down load and install hadoop
  --------------------------------------------
 download
-1) hduser@laptop:~$ wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.5.tar.gz
+1) hduser@laptop:~$ wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.5/hadoop-2.6.5.tar.gz
 
 
 install
