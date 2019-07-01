@@ -219,6 +219,39 @@ sshd : The daemon that is running on the server and allows clients to connect to
 
 k@laptop:~$ sudo apt-get install ssh
 -------------------------------------------------------------
+Create and Setup SSH Certificates
+---------------------------------------------------
+Hadoop requires SSH access to manage its nodes, i.e. remote machines plus our local machine. we therefore need to configure SSH access to localhost.
+
+So, we need to have SSH up and running on our machine and configured it to allow SSH public key authentication.
+
+Hadoop uses SSH (to access its nodes) which would normally require the user to enter a password. However, this requirement can be eliminated by creating and setting up SSH certificates using the following commands. If asked for a filename just leave it blank and press the enter key to continue.
+----------------------------------------------------------------
+to login for user
+-------------------------
+su hduser
+password
+--------------------------------------------
+to generate password
+------------------------------------
+ssh-keygen -t rsa -P ""
+--------------------------------------------
+down load and install hadoop
+ --------------------------------------------
+download
+1) hduser@laptop:~$ wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.5.tar.gz
+
+
+install
+2)hduser@laptop:~$ tar xvzf hadoop-2.6.5.tar.gz
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
