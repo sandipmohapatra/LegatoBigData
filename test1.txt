@@ -1,0 +1,29 @@
+1)What is HDFS ? How it is different from traditional file systems?
+HDFS, the Hadoop Distributed File System, is responsible for storing huge data on the cluster. This is a distributed file system designed to run on commodity hardware. It has many similarities with existing distributed file systems. However, the differences from other distributed file systems are significant.
+•HDFS is highly fault-tolerant and is designed to be deployed on low-cost hardware.
+•HDFS provides high throughput access to application data and is suitable for applications that have large data sets.
+•HDFS is designed to support very large files. Applications that are compatible with HDFS are those that deal with large data sets. These applications write their data only once but they read it one or more times and require these reads to be satisfied at streaming speeds. HDFS supports write-once-read-many semantics on files.
+---------------------------------------------------------------------------------------------
+2). What is a NameNode? How many instances of NameNode run on a Hadoop Cluster?
+The NameNode is the centerpiece of an HDFS file system. It keeps the directory tree of all files in the file system, and tracks where across the cluster the file data is kept. It does not store the data of these files itself. There is only One NameNode process run on any hadoop cluster. NameNode runs on its own JVM process. In a typical production cluster its run on a separate machine. The NameNode is a Single Point of Failure for the HDFS Cluster. When the NameNode goes down, the file system goes offline. Client applications talk to the NameNode whenever they wish to locate a file, or when they want to add/copy/move/delete a file. The NameNode responds the successful requests by returning a list of relevant DataNode servers where the data lives.
+-----------------------------------------------------------------------------------------------
+
+3)How data node communicate with the name node?Draw the artitecture 
+
+
+4) What is a Task Tracker in Hadoop? How many instances of TaskTracker run on a Hadoop Cluster?
+A TaskTracker is a slave node daemon in the cluster that accepts tasks from a JobTracker. There is only One Task Tracker process run on any hadoop slave node. Task Tracker runs on its own JVM process.The TaskTracker monitors these task instances, capturing the output and exit codes. When the Task instances finish, successfully or not, the task tracker notifies the JobTracker. The TaskTrackers also send out heartbeat messages to the JobTracker, usually every few minutes, to reassure the JobTracker that it is still alive. These message also inform the JobTracker of the number of available slots, so the JobTracker can stay up to date with where in the cluster work can be delegated.
+------------------------------------------------------------------------------------------
+5)What is a JobTracker in Hadoop? How many instances of JobTracker run on a Hadoop Cluster?
+JobTracker is the daemon service for submitting and tracking MapReduce jobs in Hadoop. There is only One Job Tracker process run on any hadoop cluster. Job Tracker runs on its own JVM process. In a typical production cluster its run on a separate machine. Each slave node is configured with job tracker node location. The JobTracker is single point of failure for the Hadoop MapReduce service. If it goes down, all running jobs are halted. JobTracker in Hadoop performs following actions
+•Client applications submit jobs to the Job tracker.
+•The JobTracker talks to the NameNode to determine the location of the data
+•The JobTracker locates TaskTracker nodes with available slots at or near the data
+•The JobTracker submits the work to the chosen TaskTracker nodes.
+•The TaskTracker nodes are monitored. If they do not submit heartbeat signals often enough, they are deemed to have failed and the work is scheduled on a different TaskTracker.
+•A TaskTracker will notify the JobTracker when a task fails. The JobTracker decides what to do then: it may resubmit the job elsewhere, it may mark that specific record as something to avoid, and it may may even blacklist the TaskTracker as unreliable.
+•When the work is completed, the JobTracker updates its status.
+•Client applications can poll the JobTracker for information.
+
+6)Define oops cocept?
+7)What is Big Data explain with example. 
