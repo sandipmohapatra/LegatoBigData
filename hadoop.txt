@@ -1,0 +1,113 @@
+BigData
+------------------
+Due to the new technologies, devices, and communication means like social networking sites, the amount of data produced by mankind is growing rapidly every year. 
+
+The amount of data produced by us from the beginning of time till 2018 was 15 billion gigabytes. 
+
+If you pile up the data in the form of disks it may fill an entire football field. The same amount was created in every two days in 2016, and in every ten minutes in 2018. This rate is still growing enormously. 
+
+Though all this information produced is meaningful and can be useful when processed, it is being neglected.
+
+Big data is a collection of large datasets that cannot be processed using traditional computing techniques. It is not a single technique or a tool, rather it has become a complete subject, which involves various tools, techniques and frameworks.
+
+Big data involves the data produced by different devices and applications. 
+•Black Box Data - It is a component of helicopter, airplanes, and jets, etc. It captures voices of the flight crew, recordings of microphones and earphones, and the performance information of the aircraft.
+
+•Social Media Data - Social media such as Facebook and Twitter hold information and the views posted by millions of people across the globe.
+
+•Stock Exchange Data - The stock exchange data holds information about the ‘buy’ and ‘sell’ decisions made on a share of different companies made by the customers.
+
+•Power Grid Data - The power grid data holds information consumed by a particular node with respect to a base station.
+
+•Transport Data - Transport data includes model, capacity, distance and availability of a vehicle.
+
+•Search Engine Data - Search engines retrieve lots of data from different databases.
+
+Bigdata :- it is data which is beyond the storage of single centralized server.
+Hadoop is a open source java framework for storing large data.
+Clusters are set of machine conected to a dedicated network.
+Hadoop = storage + Processing
+Hadoop is used to store data using HDFS
+Hadoop is used to process data using MapReduce which are programs in java.
+Hadoop is developed in java.
+
+Benefits of Big Data
+•Using the information kept in the social network like Facebook, the marketing agencies are learning about the response for their campaigns, promotions, and other advertising mediums.
+
+•Using the information in the social media for product companies and retail organizations are planning their production.
+
+•Using the data regarding the previous medical history of patients, hospitals are providing better and quick service.
+
+Hadoop is an Apache open source framework written in java that allows distributed processing of large datasets across clusters of computers using simple programming models. 
+
+The Hadoop framework application works in an environment that provides distributed storage and computation across clusters of computers. 
+--------------------------------------------------------------------------------
+HDFS(Hadoop distributed file system)
+
+Hadoop file system is divided into smaller unit called chunks or blocks.
+In Hadoop 1.x the size of block is 64MB.
+In Hadoop 2.x the size of block is 128MB.
+Hadoop is used to store huge volume of data.
+example:-
+1)100mb of data will be stored in 2 blocks.(64mb and 36 mb)
+2)200mb of data will be stored in 4 blocks.(64mb ,64 mb,64 mb and 8 mb)
+
+In hadoop we use commodity machines which are less expensive machine,like our laptops and desktop to store data.It may fail sometimes.
+
+We have master node or name node as high configuration machine.
+name node maintains replica of 3 copies.
+
+name node get heartbeat signals from datanode every 3 seconds.
+name node contains metadata about datanode.
+
+master node or name node (server) and datanode is client machines where data will have 3 replica.
+
+for every 10th heartbeat signal or 30 sec block report is send.
+
+block report contains :-
+1)number of blocks used.
+2)disk usage
+3)current activities.
+These report are send from datanode to name node.
+name node store meta data of entire cluster of datanode.
+
+-------------------------------------------------------------------------------------------------
+data ---collection of meaning full data.
+they are 3 types
+1)structured data:- example oracle,mysql,sql server(rows,columns)
+2)Unstructured data:- images ,audio files,video files
+3)semi-structured:- files,pdf,xml,json
+-----------------------------------------------------------
+Topics
+1)SQOOP :-work with SQL
+2)Apache Flume :- work with semi-structured data
+3)HIVE and PIG :- They are for non java program.
+Hive is data warehouse tool to process structured data.it use sql query language. 
+we have Hive query language(HQL).
+Pig is high level data transformation language.
+4)HBASE :- it is known as Hadoop database .it is column base and also data in document format .
+•HBase is scalable.
+•It has automatic failure support.
+•It provides consistent read and writes.
+•It integrates with Hadoop, both as a source and a destination.
+•It has easy java API for client.
+•It provides data replication across clusters.
+--------------------------------------------------
+HDFS
+-------------------
+1)Job tracker is associated with the name node(master node)
+2)Task tracker is associated with the dat node.
+
+HDFS cluster is the name given to the whole group systems used for this operation where data is stored.
+Mapreduce is the programing model which is used to process the data.
+
+HDFS
+--------------------------------------
+1)Highly fault-tolerant.(replicate data)
+2)high throughput(if 10 machine is used to process the data of 1TB.)the data processing will be faster.
+3)suitable for application with large data set.
+4)stream access of large set of data.
+5)data is build on commodity machines.
+
+
+
