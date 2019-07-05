@@ -78,25 +78,10 @@ they are 3 types
 2)Unstructured data:- images ,audio files,video files
 3)semi-structured:- files,pdf,xml,json
 -----------------------------------------------------------
-Topics
-1)SQOOP :-work with SQL
-2)Apache Flume :- work with semi-structured data
-3)HIVE and PIG :- They are for non java program.
-Hive is data warehouse tool to process structured data.it use sql query language. 
-we have Hive query language(HQL).
-Pig is high level data transformation language.
-4)HBASE :- it is known as Hadoop database .it is column base and also data in document format .
-•HBase is scalable.
-•It has automatic failure support.
-•It provides consistent read and writes.
-•It integrates with Hadoop, both as a source and a destination.
-•It has easy java API for client.
-•It provides data replication across clusters.
---------------------------------------------------
 HDFS
 -------------------
 1)Job tracker is associated with the name node(master node)
-2)Task tracker is associated with the dat node.
+2)Task tracker is associated with the data node.
 
 HDFS cluster is the name given to the whole group systems used for this operation where data is stored.
 Mapreduce is the programing model which is used to process the data.
@@ -108,6 +93,64 @@ HDFS
 3)suitable for application with large data set.
 4)stream access of large set of data.
 5)data is build on commodity machines.
+
+HDFS is a file system designed for storing very large files with streaming data access patterns, running clusters on commodity hardware.
+
+*name node is a single point of failure.
+---------------------------------------------------------------------
+Map reduce
+-----------------
+A core processing component of hadoop which is meant for processing of huge data in a parallel fashion on commodity hardware machine.
+
+The mapreduce contains two important tasks,namely map and reduce.
+Map takes a set of data and converts it into another set of data where individual elements are broken down into tuples(key/value pairs.
+
+secondly reduce task which takes the output from a map as an input and combines those data tuples into a smaller set of tuples. The reduce task is always performed after the map job.
+
+HDFS demons :- name node,secondary name node ,data node
+Mapreduce Demons:- Job Tracker ,Task Tracker
+
+ Job Tracker
+----------------
+1)only one instance of this process runs on a master node same as name node.
+2)Any MapReduce job is submitted to job tracker first.
+3)Job Tracker checks for the location and initiates tasks to Data nodes by communicating with task tracker Daemons.
+
+Task Tracker
+--------------------------
+1)This process has multiple instances running on the slave nodes where data node is running.
+2)it receives the job instractions from job tracker daemon.
+3)the task tracker initiates the task on the same node where physical data block is present.
+4)same as the data node daemon this process also periodically sends heart bits to job tracker to make jobtracker aware that slave process is running.
+
+Data Flow In MapReduce
+-------------------------------------------
+1)Input reader
+The input reader reads the upcoming data and splits it into the data blocks of the appropriate size (64 MB to 128 MB). Each data block is associated with a Map function.
+
+Once input reads the data, it generates the corresponding key-value pairs. The input files reside in HDFS
+
+2)Map function
+The map function process the upcoming key-value pairs and generated the corresponding output key-value pairs. The map input and output type may be different from each other.
+
+3)Partition function
+The partition function assigns the output of each Map function to the appropriate reducer. The available key and value provide this function. It returns the index of reducers.
+
+4)Shuffling and Sorting
+The data are shuffled between/within nodes so that it moves out from the map and get ready to process for reduce function. Sometimes, the shuffling of data can take much computation time.
+
+5)The sorting operation is performed on input data for Reduce function. Here, the data is compared using comparison function and arranged in a sorted form.
+
+6)Reduce function
+The Reduce function is assigned to each unique key. These keys are already arranged in sorted order. The values associated with the keys can iterate the Reduce and generates the corresponding output.
+
+7)Output writer
+Once the data flow from all the above phases, Output writer executes. The role of Output writer is to write the Reduce output to the stable storage.
+
+------------------------------------------------------------------------------------------------
+
+ 
+
 
 
 
