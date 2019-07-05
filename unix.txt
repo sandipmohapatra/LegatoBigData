@@ -257,8 +257,8 @@ sudo adduser hduser sudo
 ------------------------------------------------------
 move  the installed s/w to another folder and give owner permission
 ----------------------------------------------------------------------------------------
-hduser@laptop:~/hadoop-2.6.5$ sudo mv * /usr/local/hadoop 
-hduser@laptop:~/hadoop-2.6.5$ sudo chown -R hduser:hadoop /usr/local/hadoop
+hduser@laptop:~/$ sudo mv hadoop-2.6.5 /usr/local
+hduser@laptop:~/$ sudo chown -R hduser:hadoop /usr/local/hadoop-2.6.5
 -----------------------------------------------------------------
 Setup Configuration Files
 ------------------------------------------------------------------
@@ -270,10 +270,10 @@ Setup Configuration Files
 ------------------------------------------------------------------------------------------------
 Now we can append the following to the end of ~/.bashrc:
 
-hduser@laptop:~$ vi ~/.bashrc
+hduser@laptop:~$ nano ~/.bashrc
 
 #HADOOP VARIABLES START
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 export HADOOP_INSTALL=/usr/local/hadoop
 export PATH=$PATH:$HADOOP_INSTALL/bin
 export PATH=$PATH:$HADOOP_INSTALL/sbin
@@ -379,8 +379,28 @@ hduser@laptop:~$ sudo chown -R hduser:hadoop /usr/local/hadoop_store
 
 
 ----------------------------------------------------------------------------------------------------
+Format the New Hadoop Filesystem
+Now, the Hadoop file system needs to be formatted so that we can start to use it. The format command should be issued with write permission since it creates current directory 
+under /usr/local/hadoop_store/hdfs/namenode folder:
 
+hduser@laptop:~$ hadoop namenode -format
 
+---------------------------------------------------------------------------------
+Starting Hadoop
+Now it's time to start the newly installed single node cluster. 
+We can use start-all.sh or (start-dfs.sh and start-yarn.sh)
+
+sandip@laptop:~$ cd /usr/local/hadoop/sbin
+------------------------------------------------------------------
+sandip@laptop:/usr/local/hadoop/sbin$ sudo su hduser
+
+-------------------------------------
+hduser@laptop:/usr/local/hadoop/sbin$ start-all.sh
+hduser@laptop:~$ start-all.sh
+
+--------------------------
+hduser@laptop:/usr/local/hadoop/sbin$ jps
+-----------------------------------------------------------------
 
 
 
