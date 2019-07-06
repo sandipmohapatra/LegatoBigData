@@ -305,7 +305,7 @@ We need to set JAVA_HOME by modifying hadoop-env.sh file.
 
 hduser@laptop:~$ vi /usr/local/hadoop/etc/hadoop/hadoop-env.sh
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 Adding the above statement in the hadoop-env.sh file ensures that the value of JAVA_HOME variable will be available to Hadoop whenever it is started up.
 
 ------------------------------------------------------------------------------------------------
@@ -397,7 +397,7 @@ sandip@laptop:/usr/local/hadoop/sbin$ sudo su hduser
 -------------------------------------
 hduser@laptop:/usr/local/hadoop/sbin$ start-all.sh
 hduser@laptop:~$ start-all.sh
-
+hduser@laptop:~$ stop-all.sh
 --------------------------
 hduser@laptop:/usr/local/hadoop/sbin$ jps
 -----------------------------------------------------------------
