@@ -296,7 +296,7 @@ hduser@ubuntu-VirtualBox:~$ which javac
 /usr/bin/javac
 
 hduser@ubuntu-VirtualBox:~$ readlink -f /usr/bin/javac
-/usr/lib/jvm/java-7-openjdk-amd64/bin/javac
+/usr/lib/jvm/java-7-openjdk-i386/bin/javac
 --------------------------------------------------------------------------------------------------------
 
 2. /usr/local/hadoop/etc/hadoop/hadoop-env.sh
