@@ -21,6 +21,8 @@ Hive is not capable of handling real-time data.
 It is not designed for online transaction processing.
 Hive queries contain high latency.
 Differences between Hive and Pig
+
+
 Hive	
 Hive is commonly used by Data Analysts.	
 It follows SQL-like queries.	
@@ -52,3 +54,79 @@ export HADOOP_USER_CLASSPATH_FIRST=true
 4) source ~/.bashrc
 
 5)hive
+---------------------------------------------------------------
+data types
+--------------------------------------------------------------
+TINYINT		1-byte signed integer	
+SMALLINT	2-byte signed integer	
+INT		4-byte signed integer	
+BIGINT		8-byte signed integer
+FLOAT		4-byte	
+DOUBLE		8-byte
+
+-------------------------------------------------------------
+Complex Type
+--------------------------------------------------------------
+Struct	struct('sandip','kumar')
+Map 	map('first','sandip','last','kumar')
+Array	array('sandip','kumar')
+
+----------------------------------------------------------------------------------------------------------
+String Types
+----------------------------------
+STRING
+The string is a sequence of characters. It values can be enclosed within single quotes or double quotes .
+
+Varchar
+The varchar is a variable length type whose range lies between 1 and 65535.
+
+CHAR
+The char is a fixed-length type whose maximum length is fixed at 255.
+
+---------------------------------------------------------------------------------------------
+HIVE Partitioning
+
+Table partitioning means dividing table into some parts based on values of a particular column like date or country, segregate the records into different files.
+It can be done on more than one column. The advantage of partioning is that since the data is stored in slices query response time is faster.
+
+-------------------------------------------------------------------------------------------
+CREATE TABLE STUDENT (ROLLNO INT, NAME STRING) PARTITIONED BY (STREAM STRING);  
+
+Hive Commands
+Hive supports Data definition Language(DDL), Data Manipulation Language(DML) and User defined functions.
+
+Hive DDL Commands
+create database,drop database,create table,drop table,alter table
+create index,create views
+
+Hive DML Commands
+Select,Where,Group By,Order By,Load Data,
+Join:Inner Join,Left Outer Join,Right Outer Join,Full Outer Join
+------------------------------------------------------------------------------------------------------
+1)hive> CREATE SCHEMA LEGATO;  
+
+2)hive> SHOW DATABASES;  
+
+3)hive> DROP DATABASE IF EXISTS LEGATO;
+
+4)hive> CREATE TABLE STUDENT(ROLLNO INT, NAME STRING,ADDRESS STRING);
+
+5)hive>  Show tables;  
+
+6)hive>  INSERT INTO STUDENT VALUES(101,'SANDIP','HYD'); 
+
+7)hive>  SELECT * FROM STUDENT;
+
+8)hive> ALTER TABLE STUDENT RENAME TO EMPLOYEE;  
+
+9)hive> ALTER TABLE EMPLOYEE ADD COLUMNS (ACCNO INT);
+
+10)hive> SELECT  E.ROLLNO FROM Employee E  WHERE E.Address='HYD';
+
+11)hive> hive> SELECT  ROLLNO FROM Employee E GROUP BY E.Addresss;     
+
+12)hive> SELECT  ROLLNO FROM Employee E SORT BY E.ROLLNO;
+
+13)hive> SELECT  E.ROLLNO FROM Employee E order BY E.ROLLNO;
+
+        
