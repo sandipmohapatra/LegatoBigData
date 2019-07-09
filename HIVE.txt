@@ -123,7 +123,7 @@ Join:Inner Join,Left Outer Join,Right Outer Join,Full Outer Join
 
 10)hive> SELECT  E.ROLLNO FROM Employee E  WHERE E.Address='HYD';
 
-11)hive> hive> SELECT  ROLLNO FROM Employee E GROUP BY E.Addresss;     
+11)hive> SELECT  E.ROLLNO FROM Employee E GROUP BY E.Addresss;     
 
 12)hive> SELECT  ROLLNO FROM Employee E SORT BY E.ROLLNO;
 
