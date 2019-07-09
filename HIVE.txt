@@ -1,0 +1,54 @@
+Hive is a data warehouse system which is used to analyze structured data. It is built on the top of Hadoop. It was developed by Facebook.
+
+Hive provides the functionality of reading, writing, and managing large datasets residing in distributed storage. It runs SQL like queries called HQL (Hive query language) which gets internally converted to MapReduce jobs.
+
+Using Hive, we can skip the requirement of the traditional approach of writing complex MapReduce programs. Hive supports Data Definition Language (DDL), Data Manipulation Language (DML), and User Defined Functions (UDF).
+
+Features of Hive
+These are the following features of Hive:
+
+Hive is fast and scalable.
+It provides SQL-like queries (i.e., HQL) that are implicitly transformed to MapReduce or Spark jobs.
+It is capable of analyzing large datasets stored in HDFS.
+It allows different storage types such as plain text, RCFile, and HBase.
+It uses indexing to accelerate queries.
+It can operate on compressed data stored in the Hadoop ecosystem.
+It supports user-defined functions (UDFs) where user can provide its functionality.
+
+Limitations of Hive
+------------------------------------
+Hive is not capable of handling real-time data.
+It is not designed for online transaction processing.
+Hive queries contain high latency.
+Differences between Hive and Pig
+Hive	
+Hive is commonly used by Data Analysts.	
+It follows SQL-like queries.	
+It can handle structured data.	
+It works on server-side of HDFS cluster.	
+Hive is slower than Pig.	
+
+
+Pig
+Pig is commonly used by programmers.
+It follows the data-flow language.
+It can handle semi-structured data.
+It works on client-side of HDFS cluster.
+Pig is comparatively faster than Hive.
+
+----------------------------------------------------------------------------
+install hive
+------------------------
+1)wget http://mirrors.estointernet.in/apache/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz  
+
+2)tar -xvzf apache-hive-1.2.2-bin.tar.gz  
+
+3)sudo nano ~/.bashrc 
+
+export HIVE_HOME=/home/codegyani/apache-hive-1.2.2-bin  
+export PATH=$PATH:/home/codegyani/apache-hive-1.2.2-bin/bin  
+export HADOOP_USER_CLASSPATH_FIRST=true
+---------------------------------
+4) source ~/.bashrc
+
+5)hive
