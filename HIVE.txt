@@ -45,8 +45,8 @@ install hive
 
 3)sudo nano ~/.bashrc 
 
-export HIVE_HOME=/home/codegyani/apache-hive-1.2.2-bin  
-export PATH=$PATH:/home/codegyani/apache-hive-1.2.2-bin/bin  
+export HIVE_HOME=/home/hduser/apache-hive-1.2.2-bin  
+export PATH=$PATH:/home/hduser/apache-hive-1.2.2-bin/bin  
 export HADOOP_USER_CLASSPATH_FIRST=true
 ---------------------------------
 4) source ~/.bashrc
