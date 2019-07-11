@@ -211,4 +211,51 @@ OK
 ["hadoop","supports","split","function"]
 
 ---------------------------------------------------------------------------------------
-       
+Date Function
+
+hive> select current_timestamp();
+OK
+2017-10-01 00:54:14.736
+Time taken: 0.65 seconds, Fetched: 1 row(s)
+
+hive> select current_date();
+OK
+2017-10-01
+Time taken: 0.161 seconds, Fetched: 1 row(s)
+Add 1 day to current date using HiveQL
+
+hive> select date_add(current_date(), 1);
+OK
+2017-10-02
+Time taken: 0.123 seconds, Fetched: 1 row(s)
+Subtract 1 day from current date using HiveQL
+
+hive> select date_sub(current_date(),1);
+OK
+2017-09-30
+Time taken: 0.107 seconds, Fetched: 1 row(s)
+Get first day of the given timstamp using HiveQL
+
+hive> select trunc(current_timestamp(), 'MONTH');
+OK
+2017-10-01
+Time taken: 0.072 seconds, Fetched: 1 row(s)
+Convert timestamp to date format using HiveQL
+
+hive> select to_date(current_timestamp());
+OK
+2017-10-01
+Time taken: 0.08 seconds, Fetched: 1 row(s)
+Data type conversion using Cast function in HiveQL
+
+hive> select cast(current_timestamp() as date);
+OK
+2017-10-01
+Time taken: 0.094 seconds, Fetched: 1 row(s)
+Convert Timestamp to YYYYMMDD format using HiveQL
+
+hive> select from_unixtime(unix_timestamp(current_date()), 'yyyymmdd');
+OK
+20170001
+Time taken: 0.078 seconds, Fetched: 1 row(s) 
+------------------------------------------------------------------------------------      
