@@ -1,3 +1,4 @@
+
 Hive is a data warehouse system which is used to analyze structured data. It is built on the top of Hadoop. It was developed by Facebook.
 
 Hive provides the functionality of reading, writing, and managing large datasets residing in distributed storage. It runs SQL like queries called HQL (Hive query language) which gets internally converted to MapReduce jobs.
@@ -20,6 +21,7 @@ Limitations of Hive
 Hive is not capable of handling real-time data.
 It is not designed for online transaction processing.
 Hive queries contain high latency.
+-----------------------------------------------
 Differences between Hive and Pig
 
 
@@ -71,7 +73,7 @@ Struct	struct('sandip','kumar')
 Map 	map('first','sandip','last','kumar')
 Array	array('sandip','kumar')
 
-----------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 String Types
 ----------------------------------
 STRING
@@ -128,5 +130,85 @@ Join:Inner Join,Left Outer Join,Right Outer Join,Full Outer Join
 12)hive> SELECT  ROLLNO FROM Employee E SORT BY E.ROLLNO;
 
 13)hive> SELECT  E.ROLLNO FROM Employee E order BY E.ROLLNO;
+-----------------------------------------------------------------------------------------
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.DriverManager;
 
-        
+public class HiveCreateDb {
+   private static String driverName = "org.apache.hadoop.hive.jdbc.HiveDriver";
+   
+   public static void main(String[] args) throws SQLException {
+      // Register driver and create driver instance
+   
+      Class.forName(driverName);
+      // get connection
+      
+      Connection con = DriverManager.getConnection("jdbc:hive://localhost:10000/default", "", "");
+      Statement stmt = con.createStatement();
+      
+      stmt.executeQuery("CREATE DATABASE userdb");
+      System.out.println(“Database userdb created successfully.”);
+      
+      con.close();
+   }
+}
+ ----------------------------------------------------------------------------------------------
+String function
+
+14)hive> select CONCAT('concat','->','demo');
+OK
+concat->demo
+
+15)hive> select substr('This is hive demo',9,4);
+OK
+hive
+
+16)hive> select length('hadoop');
+OK
+6
+
+17)hive> select upper('hadoop'), ucase('hadoop');
+OK
+HADOOP HADOOP
+
+18)hive> select lower('HADOOP'), lcase('HADOOP');
+OK
+hadoop hadoop
+
+19)hive> select lpad('hadoop',8,'H');
+OK
+Hhhadoop
+
+20)hive> select rpad(‘hadoop’,8,’p’);
+OK
+hadooppp
+
+21)hive> select trim(' Hadoop ');
+OK
+'Hadoop'
+
+22)hive> select ltrim(' Hadoop ');
+OK
+'Hadoop '
+
+23)hive> select rtrim(' Hadoop ');
+OK
+' Hadoop'
+
+24)hive> select repeat('Hadoop',2);
+OK
+HadoopHadoop
+
+25)hive> select reverse('Hadoop');
+OK
+poodaH
+
+26)hive> select split('hadoop~supports~split~function','~');
+OK
+["hadoop","supports","split","function"]
+
+---------------------------------------------------------------------------------------
+       
