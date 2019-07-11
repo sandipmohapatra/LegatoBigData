@@ -1,0 +1,57 @@
+Apache Pig is a high-level data flow platform for executing MapReduce programs of Hadoop. The language used for Pig is Pig Latin.
+
+The Pig scripts get internally converted to Map Reduce jobs and get executed on data stored in HDFS. Apart from that, Pig can also execute its job in Apache Tez or Apache Spark.
+
+Pig can handle any type of data, i.e., structured, semi-structured or unstructured and stores the corresponding results into Hadoop Data File System. Every task which can be achieved using PIG can also be achieved using java used in MapReduce.
+
+Features of Apache Pig
+Let's see the various uses of Pig technology.
+
+1) Ease of programming
+Writing complex java programs for map reduce is quite tough for non-programmers. Pig makes this process easy. In the Pig, the queries are converted to MapReduce internally.
+
+2) Optimization opportunities
+It is how tasks are encoded permits the system to optimize their execution automatically, allowing the user to focus on semantics rather than efficiency.
+
+3) Extensibility
+A user-defined function is written in which the user can write their logic to execute over the data set.
+
+4) Flexible
+It can easily handle structured as well as unstructured data.
+
+5) In-built operators
+It contains various type of operators such as sort, filter and joins.
+
+---------------------------------------------------------------------------------------------------
+Apache PIG
+It is a high-level data flow tool.
+It is not required to develop complex programs.
+It provides built-in operators to perform data operations like union, sorting and ordering.
+It provides nested data types like tuple, bag, and map.
+----------------------------------------------------------------------------------------
+
+Advantages of Apache Pig
+Less code - The Pig consumes less line of code to perform any operation.
+Reusability - The Pig code is flexible enough to reuse again.
+Nested data types - The Pig provides a useful concept of nested data types like tuple, bag, and map.
+
+
+-------------------------------------------
+Pig Installation
+-----------------------------
+1)wget http://mirrors.estointernet.in/apache/pig/pig-0.16.0/pig-0.16.0.tar.gz
+
+2)$ tar -xvzf pig-0.16.0.tar.gz  
+
+3)
+$ sudo nano ~/.bashrc  
+export PIG_HOME=/home/hduser/pig-0.16.0  
+export PATH=$PATH:$PIG_HOME/bin 
+
+4)$ source ~/.bashrc  
+
+5)$ pig -h  (Testing)
+
+6)$ pig  
+-----------------------------------------------------------------------------------
+
