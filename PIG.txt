@@ -55,3 +55,59 @@ export PATH=$PATH:$PIG_HOME/bin
 6)$ pig  
 -----------------------------------------------------------------------------------
 
+Pig Latin
+-----------------------------
+The Pig Latin is a data flow language used by Apache Pig to analyze the data in Hadoop.
+
+Latin Data Types
+---------------------------------------------
+Simple Data Types
+
+Type	Description
+--------------------------------------------------
+int	It defines the signed 32-bit integer.
+	Example - 2
+long	It defines the signed 64-bit integer.
+	Example - 2L or 2l
+float	It defines 32-bit floating point number.
+	Example - 2.5F or 2.5f or 2.5e2f or 2.5.E2F
+double	It defines 64-bit floating point number.
+	Example - 2.5 or 2.5 or 2.5e2f or 2.5.E2F
+chararray	It defines character array in Unicode UTF-8 format.
+	Example - javatpoint
+bytearray	It defines the byte array.
+boolean	It defines the boolean type values.
+	Example - true/false
+datetime	It defines the values in datetime order.
+	Example - 1970-01- 01T00:00:00.000+00:00
+biginteger	It defines Java BigInteger values.
+	Example - 5000000000000
+bigdecimal	It defines Java BigDecimal values.
+	Example - 52.232344535345
+---------------------------------------------------------------------
+Complex Types
+-----------------------------------------
+Type	Description
+tuple	It defines an ordered set of fields.
+	Example - (15,12)
+bag	It defines a collection of tuples.
+	Example - {(15,12), (12,15)}
+map	It defines a set of key-value pairs.
+	Example - [open#apache]
+----------------------------------------------------------------------
+Pig Data Types
+--------------------------------
+Apache Pig supports many data types. A list of Apache Pig Data Types with description and examples are given below.
+
+Type	Description		Example
+--------------------------------------------------------------------------------------------------
+Int	Signed 32 bit integer		2
+Long	Signed 64 bit integer		15L or 15l
+Float	32 bit floating point		2.5f or 2.5F
+Double	32 bit floating point		1.5 or 1.5e2 or 1.5E2
+charArray	Character array		hello javatpoint
+byteArray	BLOB(Byte array)	
+tuple	Ordered set of fields		(12,43)
+bag	Collection f tuples		{(12,43),(54,28)}
+map	collection of tuples		[open#apache]
+----------------------------------------------------------------------------------------------------
