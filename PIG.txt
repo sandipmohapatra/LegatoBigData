@@ -127,9 +127,21 @@ The Apache Pig FILTER operator is used to remove duplicate tuples in a relation.
 5)Apache Pig FOREACH Operator
 The Apache Pig FOREACH operator generates data transformations based on columns of data. It is recommended to use FILTER operation to work with tuples of data.
 --------------------------------------------------------------
-
-
-
+6)Apache Pig Group Operator
+The Apache Pig GROUP operator is used to group the data in one or more relations. 
+------------------------------------------------------------------
+7)Apache Pig LIMIT Operator
+The Apache Pig LIMIT operator is used to limit the number of output tuples. 
+-------------------------------------------------------------------------------
+8)Apache Pig ORDER BY Operator
+The Apache Pig ORDER BY operator sorts a relation based on one or more fields. It maintains the order of tuples.
+----------------------------------------------------------------------
+9)Apache Pig SPLIT Operator
+The Apache Pig SPLIT operator breaks the relation into two or more relations according to the provided expression.
+-------------------------------------------------------------------------
+10)Apache Pig UNION Operator
+The Apache Pig UNION operator is used to compute the union of two or more relations. It doesn't maintain the order of tuples. It also doesn't eliminate the duplicate tuples.
+------------------------------------------------
 
 
 
