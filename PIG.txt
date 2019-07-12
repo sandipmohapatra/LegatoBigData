@@ -142,6 +142,29 @@ The Apache Pig SPLIT operator breaks the relation into two or more relations acc
 10)Apache Pig UNION Operator
 The Apache Pig UNION operator is used to compute the union of two or more relations. It doesn't maintain the order of tuples. It also doesn't eliminate the duplicate tuples.
 ------------------------------------------------
+example-1
+---------------------
+Create a text file in your local machine and write some values into it.
+Upload both text files on HDFS in the specific directory.
+Open the pig MapReduce run mode.
+Load the file that contains the data.
+Now, execute and verify the data.
+Let's perform the union operation between both files.
+Now, execute and verify the data.
+------------------------------------
+local user
+step1 :- $ nano durga.txt  
+step2 :-$ nano durgasoft.txt  
+step3 :-hdfs dfs -put durga.txt /test
+step4 :-hdfs dfs -put durgasoft.txt /test
+pig
+step1:-grunt>A = load '/test/durga.txt' using PigStorage(',') as (a1:int,a2:int);  
+step2:-grunt>DUMP A;  
+step3:-grunt>B = load '/test/durgasoft.txt' using PigStorage(',') as (a1:int,a2:int,a3:int);  
+step4:-grunt>DUMP B;
+step5:- grunt> Result = UNION A,B; 
+step6:-grunt> DUMP Result;  
+---------------------------------------------------------------------------------
 
 
 
