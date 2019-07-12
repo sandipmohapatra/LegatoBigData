@@ -88,6 +88,7 @@ bigdecimal	It defines Java BigDecimal values.
 Complex Types
 -----------------------------------------
 Type	Description
+----------------------------------------
 tuple	It defines an ordered set of fields.
 	Example - (15,12)
 bag	It defines a collection of tuples.
@@ -111,3 +112,27 @@ tuple	Ordered set of fields		(12,43)
 bag	Collection f tuples		{(12,43),(54,28)}
 map	collection of tuples		[open#apache]
 ----------------------------------------------------------------------------------------------------
+1)Apache Pig LOAD Operator
+The Apache Pig LOAD operator is used to load the data from the file system.
+---------------------------------------------------------------------
+2)Apache Pig CROSS Operator
+The Apache Pig CROSS operator facilitates to compute the cross product of two or more relations. Using CROSS operator is an expensive operation and should be used sparingly.
+----------------------------------------------------
+3)Apache Pig DISTINCT Operator
+The Apache Pig DISTINCT operator is used to remove duplicate tuples in a relation. Initially, Pig sorts the given data and then eliminates duplicates.
+----------------------------------------------------------------
+4)Apache Pig FILTER Operator
+The Apache Pig FILTER operator is used to remove duplicate tuples in a relation. Initially, Pig sorts the given data and then eliminates duplicates.
+-----------------------------------------------------------
+5)Apache Pig FOREACH Operator
+The Apache Pig FOREACH operator generates data transformations based on columns of data. It is recommended to use FILTER operation to work with tuples of data.
+--------------------------------------------------------------
+
+
+
+
+
+
+
+
+
