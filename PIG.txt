@@ -152,6 +152,8 @@ Now, execute and verify the data.
 Let's perform the union operation between both files.
 Now, execute and verify the data.
 ------------------------------------
+UNION
+
 local user
 step1 :- $ nano durga.txt  
 step2 :-$ nano durgasoft.txt  
@@ -165,9 +167,28 @@ step4:-grunt>DUMP B;
 step5:- grunt> Result = UNION A,B; 
 step6:-grunt> DUMP Result;  
 ---------------------------------------------------------------------------------
+split
+-------------------
+local
+step1 :-$ nano split.txt  
+step2 :-hdfs dfs -put split.txt /
+--------
+pig
+grunt> A = LOAD '/split.txt' USING PigStorage(',') AS (a1:int,a2:int);  
+grunt> DUMP A;  
+grunt> SPLIT A INTO X IF a1<=2, Y IF a1>2;  
+grunt> DUMP X;  
+grunt> DUMP Y;  
+---------------------------------------------------------------------------
+ORDER BY
+-------------------------
+step1 :-$ nano order.txt  
+step2 :-hdfs dfs -put order.txt /
 
-
-
-
-
-
+pig
+grunt> A = LOAD '/order.txt' USING PigStorage(',') AS (a1:int,a2:int);  
+grunt> DUMP A
+grunt> Result = ORDER A BY a1 DESC;  
+grunt> Result = ORDER A BY a1 asc;  
+grunt> DUMP Result;  
+---------------------------------------------------------
