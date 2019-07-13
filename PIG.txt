@@ -217,3 +217,19 @@ grunt>DUMP result;
 o/p:-(10,{(ravi,bangalore,10),(KIRAN,bangalore,10),(sandip,bangalore,10)})
 (20,{(arun,bangalore,20),(sunil,bangalore,20)})
 --------------------------------------------- 
+FOREACH
+----------------------
+pig
+grunt> A = LOAD '/group.txt' USING PigStorage(',') AS (name:chararray,address:chararray,dept:int);  
+grunt> DUMP A
+grunt> result = FOREACH A generate name,address;  
+grunt> DUMP result; 
+------------------------------------------------------ 
+FILTER
+----------------
+pig
+grunt> A = LOAD '/group.txt' USING PigStorage(',') AS (name:chararray,address:chararray,dept:int);  
+grunt> DUMP A
+grunt> Result = FILTER A BY dept==10;   
+grunt> DUMP Result; 
+---------------------------------------------------------------------------
