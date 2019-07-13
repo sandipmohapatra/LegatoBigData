@@ -233,3 +233,11 @@ grunt> DUMP A
 grunt> Result = FILTER A BY dept==10;   
 grunt> DUMP Result; 
 ---------------------------------------------------------------------------
+DISTINCT Operator
+--------------------------------
+pig
+grunt> A = LOAD '/group.txt' USING PigStorage(',') AS (name:chararray,address:chararray,dept:int);  
+grunt> DUMP A
+grunt> Result = DISTINCT A;
+grunt> DUMP Result;
+-------------------------------------------------------------
