@@ -192,3 +192,28 @@ grunt> Result = ORDER A BY a1 DESC;
 grunt> Result = ORDER A BY a1 asc;  
 grunt> DUMP Result;  
 ---------------------------------------------------------
+Limit
+-------------------
+step1 :-$ nano limit.txt  
+step2 :-hdfs dfs -put limit.txt /
+
+pig
+grunt> A = LOAD '/limit.txt' USING PigStorage(',') AS (a1:int,a2:chararray);  
+grunt> DUMP A
+grunt> Result = LIMIT A 2; 
+grunt> DUMP Result;  
+----------------------------------------------------------------
+GROUPBY
+----------------------------
+step1 :-$ nano group.txt  
+step2 :-hdfs dfs -put group.txt /
+
+pig
+grunt> A = LOAD '/group.txt' USING PigStorage(',') AS (name:chararray,address:chararray,dept:int);  
+grunt> DUMP A
+grunt> result = group A by dept;  
+grunt>DUMP result;
+
+o/p:-(10,{(ravi,bangalore,10),(KIRAN,bangalore,10),(sandip,bangalore,10)})
+(20,{(arun,bangalore,20),(sunil,bangalore,20)})
+--------------------------------------------- 
