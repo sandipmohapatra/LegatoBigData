@@ -1,0 +1,78 @@
+What is SQOOP in Hadoop?
+Apache Sqoop (SQL-to-Hadoop) is designed to support bulk import of data into HDFS from structured data stores such as relational databases, enterprise data warehouses, and NoSQL systems. Sqoop is based upon a connector architecture which supports plugins to provide connectivity to new external systems.
+
+Data transfer between Sqoop and external storage system is made possible with the help of Sqoop's connectors.
+
+Sqoop has connectors for working with a range of popular relational databases, including MySQL, PostgreSQL, Oracle, SQL Server, and DB2. Each of these connectors knows how to interact with its associated DBMS. There is also a generic JDBC connector for connecting to any database that supports Java's JDBC protocol. In addition, Sqoop provides optimized MySQL and PostgreSQL connectors that use database-specific APIs to perform bulk transfers efficiently.
+
+Why do we need Sqoop?
+Analytical processing using Hadoop requires loading of huge amounts of data from diverse sources into Hadoop clusters. This process of bulk data load into Hadoop, from heterogeneous sources and then processing it, comes with a certain set of challenges. Maintaining and ensuring data consistency and ensuring efficient utilization of resources, are some factors to consider before selecting the right approach for data load.
+
+Sqoop: It is used to import and export data to and from between HDFS and RDBMS.
+
+Pig: It is a procedural language platform used to develop a script for MapReduce operations.
+
+Hive: It is a platform used to develop SQL type scripts to do MapReduce operations.
+---------------------------------------------------------------------------------
+how to install Mysql
+
+step 1:sudo apt-get install mysql-server
+step 2:sudo apt-get install libmysql-java
+step 3:mysql -u root -p
+step 4:mysql>
+
+-------------------------------------------------------------------------------
+steps to install sqoop
+
+step 1:$ sudo mkdir /usr/local/sqoop
+step 2:$ sudo chown -R hduser /usr/local/sqoop
+step 3:$ sudo chmod -R 755 /usr/local/sqoop
+step 4:wget http://archive.apache.org/dist/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz
+step 5:$ tar xzf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz
+step 6:$ mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha/* /usr/local/sqoop
+Step 7 - Move the contents of sqoop-1.4.6.bin__hadoop-2.0.4-alpha folder to /usr/local/hadoop
+
+$ mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha/* /usr/local/sqoop
+Step 8 - Edit $HOME/.bashrc file by adding the sqoop path.
+
+$ sudo gedit $HOME/.bashrc
+$HOME/.bashrc file. Add the following lines
+
+export SQOOP_HOME=/usr/local/sqoop
+export PATH=$PATH:$SQOOP_HOME/bin
+Step 9 - Reload your changed $HOME/.bashrc settings
+
+$ source $HOME/.bashrc
+Step 10 - Change the directory to /usr/local/sqoop/conf
+
+$ cd $SQOOP_HOME/conf
+Step 11 - Copy the default sqoop-env-template.sh to sqoop-env.sh
+
+$ cp sqoop-env-template.sh sqoop-env.sh
+Step 12 - Edit sqoop-env.sh file.
+
+$ gedit sqoop-env.sh
+Step 13 - Add the below lines to sqoop-env.sh file. Save and Close.
+
+export HADOOP_COMMON_HOME=/usr/local/hadoop-2.6.5
+export HADOOP_MAPRED_HOME=/usr/local/hadoop-2.6.5
+
+Step 14 - Copy the mysql-connector-java-5.1.28.jar to /sqoop/lib/ folder.
+
+$ cp /usr/share/java/mysql-connector-java-5.1.28.jar /usr/local/sqoop/lib
+Step 15 - Change the directory to /usr/local/sqoop/bin
+
+$ cd $SQOOP_HOME/bin
+Step 16 - Verify Installation
+
+$ sqoop-version
+OR
+
+$ sqoop version
+--------------------------------------------------
+sqoop eval \
+--connect jdbc:mysql://localhost/legato \
+--username root \
+--password sandip \
+--query "SELECT * FROM student LIMIT 3"
+--------------------------------------------------------------------------------------------
