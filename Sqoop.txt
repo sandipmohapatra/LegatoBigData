@@ -34,8 +34,9 @@ step 6:$ mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha /usr/local/sqoop
 
 Step 7 - Edit $HOME/.bashrc file by adding the sqoop path.
 
-$ sudo gedit $HOME/.bashrc
-$HOME/.bashrc file. Add the following lines
+$ sudo nano $HOME/.bashrc
+
+Add the following lines
 
 export SQOOP_HOME=/usr/local/sqoop
 export PATH=$PATH:$SQOOP_HOME/bin
@@ -75,3 +76,9 @@ sqoop eval \
 --password sandip \
 --query "SELECT * FROM student LIMIT 3"
 --------------------------------------------------------------------------------------------
+sqoop eval \
+--connect jdbc:mysql://localhost/legato \
+--username root \
+--password sandip \
+--query "SELECT empno,name FROM student"
+--------------------------------------------------------------------------------
