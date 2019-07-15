@@ -29,11 +29,10 @@ step 2:$ sudo chown -R hduser /usr/local/sqoop
 step 3:$ sudo chmod -R 755 /usr/local/sqoop
 step 4:wget http://archive.apache.org/dist/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz
 step 5:$ tar xzf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz
-step 6:$ mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha/* /usr/local/sqoop
-Step 7 - Move the contents of sqoop-1.4.6.bin__hadoop-2.0.4-alpha folder to /usr/local/hadoop
+ 
+step 6:$ mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha /usr/local/sqoop
 
-$ mv sqoop-1.4.6.bin__hadoop-2.0.4-alpha/* /usr/local/sqoop
-Step 8 - Edit $HOME/.bashrc file by adding the sqoop path.
+Step 7 - Edit $HOME/.bashrc file by adding the sqoop path.
 
 $ sudo gedit $HOME/.bashrc
 $HOME/.bashrc file. Add the following lines
