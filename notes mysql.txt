@@ -1,0 +1,181 @@
+MySql :-
+----------------- 
+1)The data will be in structered format.
+2)It is a relational database management system.
+3)It is secure
+4)free to download
+5)It is compactible with many o/s.
+6)High performance
+7)allows roll back of data.
+-----------------------------------------------------------------
+1)to create database :-
+create database ukstudent;
+
+2)to use the database :-
+use ukstudent;
+
+3)to create table:-
+create table student(empid int,name varchar(30),address varchar(30));
+desc student;
+
+
+4)to view all the tables in the database :-
+show tables
+
+5)to insert data :-
+insert into student values(101,'Imran','UK');
+select * from student;
+    
+
+6)to update :- 
+update student set address='united kingdom' where name='Rifat';
+
+----------------------------------------------------------------------------------------------
+ require('mysql');  <-- module 
+var MongoClient = require('mongodb')  <-- module
+This module contain the driver to connect the nodejs to Mysql
+
+For java,php,.net we have to download the jar files avilable on the internet
+and add to the path of our application.
+
+but node.js has inbuild driver in it.
+
+how to install mysql driver?
+----------------------------------------
+any module to install we have to write :-
+
+npm install mysql
+npm install mongo
+-------------------------------------
+
+to work with nodejs and mysql
+
+1)x.createConnection  <-- to create connection
+
+2)x.connect <-- to check connection is established or not
+
+3)con.query <-- to write or mention query
+
+query :- means sql statements  or sql commands
+
+
+to see the fields of the table or table structure :-
+---------------------------------------------------------------
+desc customers;
+
+
+insert querry :-
+----------------------------
+you can change the order
+-------------------------------------
+INSERT INTO customers ( address,name) VALUES ( 'UK','Lozenge')
+
+or
+same order in which the table is :-
+------------------------------------------------
+INSERT INTO customers VALUES ( 'Lozenge','UK')
+
+
+and/or
+---------
+"SELECT * FROM customers where name='Sandip' and address='UK'
+ 
+"SELECT * FROM customers where name='Sandip' or address='UK'
+
+-----------------------------------------------------------------------------------
+Assignment-4 is related to you project (social website)
+
+
+Assignment-5 :-is for Node.js.please try to solve it.
+
+You can easily able to answere if you watch the recording of classroom sessions.
+
+I have not given any database connectivity (like mongodb or mysql) 
+
+-------------------------
+Order by
+----------------------
+
+SELECT * FROM customers ORDER BY name ASC
+
+SELECT * FROM customers ORDER BY name DESC
+
+---------------------------------------
+affectedRows :- to display the row count 
+how many rows deleted or updated
+
+--------------------------------------------------
+
+delete record :-
+--------------------
+DELETE FROM customers WHERE address = 'Bangalore';
+
+DELETE FROM customers WHERE name like  'L%';
+(name starting with L and after it it has n number of characters) 
+
+DELETE FROM customers WHERE name like  '%at';
+
+
+select * FROM customers WHERE name like  '%at';(end with)
+
+select * FROM customers WHERE name like  'L%';(starts with)
+
+
+--------------------------------------------------------------------------------------
+delete the table
+------------------------
+DROP TABLE customers;
+
+----------------------------------------------
+to update records
+--------------------------
+UPDATE customers SET address = 'UK' WHERE name = 'Imran' ;
+
+-----------------------------------------------
+count no of records in a table
+-------------------------------------
+select count(name) from customers;
+
+
+----------------------------------------
+to add a column
+------------------------
+alter table customers add phoneno int;
+
+to update records at once
+-------------------------------------
+update customers set phoneno=77665533 where name in('Lozenge','Rafat','shreya');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+
