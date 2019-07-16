@@ -1,0 +1,64 @@
+What is HBase?
+HBase is an open-source, column-oriented distributed database system in a Hadoop environment. Initially, it was Google Big Table, afterward, it was re-named as HBase and is primarily written in Java.  Apache HBase is needed for real-time Big Data applications.
+
+HBase can store massive amounts of data from terabytes to petabytes. The tables present in HBase consists of billions of rows having millions of columns. HBase is built for low latency operations, which is having some specific features compared to traditional relational models.
+
+HBase Unique Features
+
+HBase is used extensively for random read and write operations
+HBase stores a large amount of data in terms of tables
+Provides linear and modular scalability over cluster environment
+Strictly consistent to read and write operations
+Automatic and configurable sharding of tables
+Automatic failover supports between Region Servers
+Easy to use Java API for client access
+
+
+A table for a popular web application may consist of billions of rows. If we want to search particular row from such a huge amount of data, HBase is the ideal choice as query fetch time in less. Most of the online analytics applications use HBase.
+
+Traditional relational data models fail to meet performance requirements of very big databases. These performance and processing limitations can be overcome by Apache HBase.
+
+Importance of NoSQL Databases in Hadoop
+In big data analytics, Hadoop plays a vital role in solving typical business problems by managing large data sets and gives the best solutions in analytics domain.
+
+In the Hadoop ecosystem, each component plays its unique role for the
+
+Data processing
+Data validation
+Data storing
+In terms of storing unstructured, semi-structured data storage as well as retrieval of such data's, relational databases are less useful. Also, fetching results by applying query on huge data sets that are stored in Hadoop storage is a challenging task. NoSQL storage technologies provide the best solution for faster querying on huge datasets.
+
+Other NoSQL storage type Databases
+Some of the NoSQL models present in the market are Cassandra, MongoDB, and CouchDB. Each of these models has different ways of storage mechanism.
+
+For example, MongoDB is a document-oriented database from the NoSQL family tree. Compared to traditional databases it provides the best features in terms of performance, availability, and scalability. It is an open source document-oriented database, and it's written in C++.
+
+Cassandra is also a distributed database from open source Apache software which is designed to handle a huge amount of data stored across commodity servers. Cassandra provides high availability with no single point of failure.
+
+While CouchDB is a document-oriented database in which each document fields are stored in key-value maps.
+
+How HBase different from other NoSQL model
+HBase storage model is different from other NoSQL models discussed above. This can be stated as follow
+
+HBase stores data in the form of key/value pairs in a columnar model. In this model, all the columns are grouped together as Column families
+HBase provides a flexible data model and low latency access to small amounts of data stored in large data sets
+HBase on top of Hadoop will increase the throughput and performance of distributed cluster set up. In turn, it provides faster random reads and writes operations.
+----------------------------------------------------------------
+
+
+
+$cd usr/local/$wget http://archive.apache.org/dist/hbase/hbase-0.94.8/hbase-0.94.8.tar.gz
+
+$tar -xvf hbase-0.94.8.tar.gz
+
+ $ sudo mkdir /usr/lib/hbase
+
+sudo chown -R hduser /usr/lib/hbase
+
+$ mv hbase-0.94.8 /usr/lib/hbase/hbase
+
+Open your hbase/conf/hbase-env.sh and set the path to the java installed in your system
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
+
+nano ~/.bashrc
+
