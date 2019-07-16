@@ -281,6 +281,7 @@ pig
 3)Result = FOREACH A GENERATE CONCAT (a1,'_',a2);   
 4)DUMP Result;  
 ------------------------------------------------------------
+
 COUNT Function
 ----------------------------------
 1)nano count.txt
@@ -308,6 +309,31 @@ pig
 3)grunt> Result = FILTER A BY a1 IN (2, 4);  
 4)grunt> DUMP Result; 
 -------------------------------------------------------------------------------------------
+MAX Function
+--------------------------------
+1)$ nano max.txt  
+2)hdfs dfs -put max.txt /
 
+pig
+1)grunt> A = LOAD '/max.txt' USING PigStorage(',') AS (a1:chararray,a2:chararray,a3:float) ;
 
+2)grunt> DUMP A;
+3)grunt> B = GROUP A BY a1;   
+4)grunt> DUMP B;
+5)grunt> Result = FOREACH B GENERATE group, MAX(A.a3);  
+6)grunt> DUMP Result;  
+---------------------------------------------------------------
+MIN Function
+--------------------------------
+1)$ nano min.txt  
+2)hdfs dfs -put min.txt /
 
+pig
+1)grunt> A = LOAD '/min.txt' USING PigStorage(',') AS (a1:chararray,a2:chararray,a3:float) ;
+
+2)grunt> DUMP A;
+3)grunt> B = GROUP A BY a1;   
+4)grunt> DUMP B;
+5)grunt> Result = FOREACH B GENERATE group, MIN(A.a3);  
+6)grunt> DUMP Result;  
+----------------------------------------------------------------------------------------------
