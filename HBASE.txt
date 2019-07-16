@@ -44,9 +44,8 @@ HBase stores data in the form of key/value pairs in a columnar model. In this mo
 HBase provides a flexible data model and low latency access to small amounts of data stored in large data sets
 HBase on top of Hadoop will increase the throughput and performance of distributed cluster set up. In turn, it provides faster random reads and writes operations.
 ----------------------------------------------------------------
-
-
-
+Installation of HBASE
+------------------------------------------
 $cd usr/local/$wget http://archive.apache.org/dist/hbase/hbase-0.94.8/hbase-0.94.8.tar.gz
 
 $tar -xvf hbase-0.94.8.tar.gz
@@ -58,7 +57,26 @@ sudo chown -R hduser /usr/lib/hbase
 $ mv hbase-0.94.8 /usr/lib/hbase/hbase
 
 Open your hbase/conf/hbase-env.sh and set the path to the java installed in your system
+-------------------------------------------------------------------------------------------------------
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
-
+-------------------------------------------------------------------------------
 nano ~/.bashrc
-
+----------------------------------------------------------------------------------------
+Inside /usr/local/Hbase you will find hbase-site.xml. 
+==============================================
+<configuration>  
+   //Here you have to set the path where you want HBase to store its files.  
+<property>  
+<name>hbase.rootdir</name>  
+<value>file:/home/hadoop/HBase/HFiles</value>  
+</property>  
+      
+   //Here you have to set the path where you want HBase to store its built in zookeeper  files.  
+<property>  
+<name>hbase.zookeeper.property.dataDir</name>  
+<value>/home/hadoop/zookeeper</value>  
+</property>  
+</configuration>  
+---------------------------------------------------------------
+$cd /usr/local/HBase/bin  
+$./start-hbase.sh  
