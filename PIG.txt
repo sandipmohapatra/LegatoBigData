@@ -285,7 +285,7 @@ pig
 COUNT Function
 ----------------------------------
 1)nano count.txt
-2)$ hdfs dfs -put evalcount.txt /
+2)$ hdfs dfs -put count.txt /
 
 pig
 ---------
@@ -337,3 +337,38 @@ pig
 5)grunt> Result = FOREACH B GENERATE group, MIN(A.a3);  
 6)grunt> DUMP Result;  
 ----------------------------------------------------------------------------------------------
+SIZE Function(character size)
+---------------------------------
+step 1:nano size.txt
+step 2:hdfs dfs -put size.txt /
+
+pig
+---------
+1)grunt> A = LOAD '/size.txt' USING PigStorage(',') AS (a1:chararray,a2:chararray) ;    
+2)grunt> DUMP A; 
+3)grunt> Result = FOREACH A GENERATE SIZE(a1);  
+4)grunt> DUMP Result;  
+----------------------------------------------------------------------------
+SUM Function
+-----------------------------
+1)nano sum.txt 
+2)hdfs dfs -put sum.txt /
+
+pig
+1)grunt> A = LOAD '/sum.txt' USING PigStorage(',') AS (a1:chararray,a2:chararray,a3:float) ;
+
+2)grunt> B = GROUP A BY a1;   
+3)grunt> DUMP B;  
+4)grunt> Result = FOREACH B GENERATE group, SUM(A.a3);  
+5)grunt> DUMP Result;  
+------------------------------------------------------------------------------------------
+TOKENIZE Function
+----------------------------------
+step 1:nano tokenize.txt
+step 2:hdfs dfs -put tokenize.txt /
+
+pig
+1)grunt> A = LOAD '/tokenize.txt' USING PigStorage(',') AS (a1:chararray) ;   
+2)grunt> DUMP A;
+3)grunt> Result = FOREACH A GENERATE TOKENIZE(a1);  
+4)grunt> DUMP Result;    
