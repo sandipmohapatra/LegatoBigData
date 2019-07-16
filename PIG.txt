@@ -241,3 +241,73 @@ grunt> DUMP A
 grunt> Result = DISTINCT A;
 grunt> DUMP Result;
 -------------------------------------------------------------
+CROSS Operator
+-------------------------------
+local user
+step1 :- $ nano cross1.txt  
+step2 :-$ nano cross2.txt  
+step3 :-hdfs dfs -put cross1.txt /
+step4 :-hdfs dfs -put cross2.txt /
+pig
+step1:-grunt>A = load '/cross1.txt' using PigStorage(',') as (a1:int,a2:int);  
+step2:-grunt>DUMP A;  
+step3:-grunt>B = load '/cross2.txt' using PigStorage(',') as (a1:int,a2:int,a3:int);  
+step4:-grunt>DUMP B;
+step5:- grunt> Result = CROSS A,B; 
+step6:-grunt> DUMP Result;
+------------------------------------------------------------------------ 
+Avg function
+------------------------------
+step1 :-$ nano avg.txt  
+step2 :-hdfs dfs -put avg.txt /
+
+pig
+grunt> A = LOAD '/avg.txt' USING PigStorage(',') AS (name:chararray,address:chararray,salary:int);  
+grunt> DUMP A
+grunt> B = GROUP A BY address;   
+grunt> DUMP B;
+grunt> Result = FOREACH B GENERATE A.name, AVG(A.salary);  
+grunt> DUMP Result;  
+-------------------------------------------------------------------
+concat function
+----------------------------------
+1)nano concat.txt  
+2)hdfs dfs -put concat.txt /
+
+pig
+--------------------------------------------------------------------------------
+1)grunt> A = LOAD '/concat.txt' USING PigStorage(',') AS (a1:chararray,a2:chararray,a3:int); 
+2)grunt> DUMP A; 
+3)Result = FOREACH A GENERATE CONCAT (a1,'_',a2);   
+4)DUMP Result;  
+------------------------------------------------------------
+COUNT Function
+----------------------------------
+1)nano count.txt
+2)$ hdfs dfs -put evalcount.txt /
+
+pig
+---------
+1)grunt> A = LOAD '/count.txt' USING PigStorage(',') AS (a1:int,a2:int,a3:int) ;  
+2)grunt> DUMP A; 
+3)grunt> B = GROUP A BY a1;   
+4)grunt> DUMP B; 
+5)grunt> Result = FOREACH B GENERATE COUNT(A);  
+6)grunt> DUMP Result;
+------------------------------------------------------------------------------
+IN Function
+-----------------------------
+1)$ nano in.txt
+2)$ hdfs dfs -put in.txt /
+
+pig
+--------------
+1)grunt> A = LOAD '/in.txt' USING PigStorage(',') AS (a1:int,a2:chararray,a3:chararray) ;    
+
+2)grunt> DUMP A;  
+3)grunt> Result = FILTER A BY a1 IN (2, 4);  
+4)grunt> DUMP Result; 
+-------------------------------------------------------------------------------------------
+
+
+
