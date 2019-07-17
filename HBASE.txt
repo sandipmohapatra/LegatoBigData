@@ -86,7 +86,7 @@ source ~/.bashrc
    <property>
 <name>hbase.rootdir</name>
 <value>hdfs://localhost:9000/hbase</value>
-<property>
+</property>
 <property>
 <name>hbase.cluster.distributed</name>
 <value>true</value>
@@ -113,3 +113,16 @@ $cd /usr/local/HBase/bin
 $./start-hbase.sh  
 -----------------------------------------------------------------------------
 https://www.guru99.com/hbase-shell-general-commands.html
+-----------------------------------------------------------------
+1)hbase shell
+2)status
+3)status 'simple'
+4)status 'summary'
+5)status 'detailed'
+6)version
+7)create 'emp', 'personal data', 'professional data'
+8)list
+9)put 'emp','1','personal data:name','raju'
+10)put 'emp','1','personal data:city','hyderabad'
+11) put 'emp','1','professional data:designation','manager'
+12)put 'emp','1','professional data:salary','50000'
