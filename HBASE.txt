@@ -57,59 +57,64 @@ Table reference variables can be used to perform data operations in HBase shell 
 ----------------------------------------------------------------
 Installation of HBASE
 ------------------------------------------
-$wget http://archive.apache.org/dist/hbase/hbase-0.94.8/hbase-0.94.8.tar.gz
+$wget http://archive.apache.org/dist/hbase/1.1.1/hbase-1.1.1-bin.tar.gz
 
-$tar -xvf hbase-0.94.8.tar.gz
+$tar -xvf hbase-1.1.1-bin.tar.gz
 
- $ sudo mkdir /usr/local/hbase
+ $ sudo mkdir /usr/local/hbase-1
 
-sudo chown -R hduser /usr/local/hbase
+sudo chown -R hduser /usr/local/hbase-1
 
-$ mv hbase-0.94.8 /usr/local/hbase/
+$ mv hbase-1.1.1 /usr/local/hbase-1/
 
-Open your hbase/conf/hbase-env.sh and set the path to the java installed in your system
+Open your hbase-1/conf/hbase-env.sh and set the path to the java installed in your system
 ---------------------------------------------------------------------------------------------------
- nano /usr/local/hbase/hbase-0.94.8/conf/hbase-env.sh
+ nano /usr/local/hbase-1/hbase-1.1.1/conf/hbase-env.sh
 -------------------------------------------------------------------------------------------------------
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 -------------------------------------------------------------------------------
 nano ~/.bashrc
 
-export HBASE_HOME=/usr/local/hbase/hbase-0.94.8
+export HBASE_HOME=/usr/local/hbase-1/hbase-1.1.1
 export PATH=$PATH:$HBASE_HOME/bin
 
 source ~/.bashrc
 ----------------------------------------------------------------------------------------
-  nano /usr/local/Hbase/hbase-0.94.8/conf/hbase-site.xml 
+  nano /usr/local/hbase-1/hbase-1.1.1/conf/hbase-site.xml 
 ==============================================
 <configuration>  
-   <property>
+  <property>
 <name>hbase.rootdir</name>
-<value>hdfs://localhost:9000/hbase</value>
+<value>hdfs://localhost:50070/hbase</value>  
 </property>
+
+<property>
+<name>hbase.master.port</name> 
+<value>60010</value>
+</property>
+
 <property>
 <name>hbase.cluster.distributed</name>
 <value>true</value>
 </property>
+
 <property>
 <name>hbase.zookeeper.quorum</name>
 <value>localhost</value>
 </property>
+
 <property>
-<name>dfs.replication</name>
-<value>1</value>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/home/hduser/hbase-1.3.1/zookeeper</value>
 </property>
+
 <property>
-<name>hbase.zookeeper.property.clientPort</name>
-<value>2181</value>
-</property>
-<property>
-<name>hbase.zookeeper.property.dataDir</name>
-<value>/home/hduser/hbase/zookeeper</value>
+<name>hbase.zookeeper.property.maxClientCnxns</name>
+<value>35</value>
 </property>
 </configuration>  
 ---------------------------------------------------------------
-$cd /usr/local/HBase/bin  
+$cd /usr/local/hbase-1/hbase-1.1.1/bin  
 $./start-hbase.sh  
 -----------------------------------------------------------------------------
 https://www.guru99.com/hbase-shell-general-commands.html
@@ -122,7 +127,10 @@ https://www.guru99.com/hbase-shell-general-commands.html
 6)version
 7)create 'emp', 'personal data', 'professional data'
 8)list
+put ’<table name>’,’row1’,’<colfamily:colname>’,’<value>’
 9)put 'emp','1','personal data:name','raju'
 10)put 'emp','1','personal data:city','hyderabad'
 11) put 'emp','1','professional data:designation','manager'
 12)put 'emp','1','professional data:salary','50000'
+13)scan 'emp'
+------------------------------------------------------------------------------------------------
