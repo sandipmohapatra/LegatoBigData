@@ -1,0 +1,18 @@
+What is FLUME in Hadoop?
+Apache Flume is a system used for moving massive quantities of streaming data into HDFS. Collecting log data present in log files from web servers and aggregating it in HDFS for analysis, is one common example use case of Flume.
+
+Flume is treating the data when it receives it. 
+1)your flume configuration will tell for example that each time there is a file in a certain directory he will put it in hdfs 
+2)your flume configuration will tell when the fille will be rolled 
+-------------------------------------------------------
+Flume supports multiple sources like –
+'tail' (which pipes data from a local file and write into HDFS via Flume, similar to Unix command 'tail')
+System logs
+Apache log4j (enable Java applications to write events to files in HDFS via Flume).
+
+
+
+
+
+------------------------------------------------------------------------------
+
