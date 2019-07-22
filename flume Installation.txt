@@ -1,0 +1,70 @@
+---------------------------------------------------------------------------------------------------
+1)wget  https://www-eu.apache.org/dist/flume/1.9.0/apache-flume-1.9.0-bin.tar.gz
+---------------------------------------------------------------
+Step 2 - Creating flume directory.
+
+$ sudo mkdir /usr/local/flume
+--------------------------------------------------------------------------
+Step 3 - Change the ownership and permissions of the directory /usr/local/flume. Here 'hduser' is an Ubuntu username.
+
+$ sudo chown -R hduser /usr/local/flume
+------------------------------------------------------------------------------------
+step 4:-$ sudo chmod -R 755 /usr/local/flume
+---------------------------------------------------------------------------------
+Step 5 - Change the directory to /home/hduser/Desktop , In my case the downloaded apache-flume-1.6.0-bin.tar.gz file is in /home/hduser/Desktop folder. For you it might be in /downloads folder check it.
+
+$ cd /home/hduser/Desktop/
+-----------------------------------------------------------------------------------
+Step 6 - Untar the apache-flume-1.6.0-bin.tar.gz file.
+
+$ tar xzf apache-flume-1.6.0-bin.tar.gz
+------------------------------------------------------------------------------------
+Step 7 - Move the contents of apache-flume-1.6.0-bin folder to /usr/local/flume
+
+$ mv apache-flume-1.6.0-bin/* /usr/local/flume
+-------------------------------------------------------------------------------------
+Step 8 - Edit $HOME/.bashrc file by adding the flume path.
+
+$ sudo gedit $HOME/.bashrc
+$HOME/.bashrc file. Add the following lines
+
+export FLUME_HOME=/usr/local/flume
+PATH=$PATH:$FLUME_HOME/bin
+export CLASSPATH=$CLASSPATH:$FLUME_HOME/lib/*:.
+---------------------------------------------------------------------------------------------
+Step 9 - Reload your changed $HOME/.bashrc settings
+
+$ source $HOME/.bashrc
+
+---------------------------------------------------------------------------------------
+Step 10 - Change the directory to /usr/local/flume/conf
+
+$ cd $FLUME_HOME/conf
+
+------------------------------------------------------------------------------------
+Step 11 - Copy the default flume-env.sh.template to flume-env.sh
+
+$ cp flume-env.sh.template flume-env.sh
+
+-----------------------------------------------------------------------
+Step 12 - Edit flume-env.sh file.
+
+$ gedit flume-env.sh
+------------------------------------------------------------------------------------------
+Step 13 - Add java path to flume-env.sh file. Save and Close.
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+--------------------------------------------------------------------------------------------
+Step 14 - Copy the default flume-conf.properties.template to flume-conf.properties
+
+$ cp flume-conf.properties.template flume-conf.properties
+----------------------------------------------------------------------------------------------
+Step 15 - Change the directory to /usr/local/flume/bin
+
+$ cd $FLUME_HOME/bin
+----------------------------------------------------------
+Step 16 - Verify Installation
+
+$ ./flume-ng version
+---------------------------------------------------------------------------------------------
