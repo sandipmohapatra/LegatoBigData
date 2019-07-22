@@ -1,4 +1,7 @@
+FLUME INSTALLATION
+
 ---------------------------------------------------------------------------------------------------
+
 1)wget  https://www-eu.apache.org/dist/flume/1.9.0/apache-flume-1.9.0-bin.tar.gz
 ---------------------------------------------------------------
 Step 2 - Creating flume directory.
@@ -53,7 +56,7 @@ $ gedit flume-env.sh
 ------------------------------------------------------------------------------------------
 Step 13 - Add java path to flume-env.sh file. Save and Close.
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 
 --------------------------------------------------------------------------------------------
 Step 14 - Copy the default flume-conf.properties.template to flume-conf.properties
@@ -68,3 +71,18 @@ Step 16 - Verify Installation
 
 $ ./flume-ng version
 ---------------------------------------------------------------------------------------------
+http://flume.praveendeshmane.co.in/flume/flume-collecting-twitter-data.jsp
+---------------------------------------------------------------------------------------------------
+Step 1 - Create an application in twitter with your twitter account. Browse to below twitter URL to create twitter application.
+
+https://apps.twitter.com/
+a) Sign in to your Twitter account. You will have a Twitter Application Management window where you can create, delete, and manage Twitter Apps.
+
+b) Click on the Create New App button. You will be redirected to a window where you will get an application form in which you have to fill in your details in order to create the App. While filling the website address, give the complete URL pattern, for example, http://example.com.
+
+c) Fill in the details, accept the Developer Agreement when finished, click on the Create your Twitter application button which is at the bottom of the page. If everything goes fine, an App will be created.
+
+d) Under keys and Access Tokens tab at the bottom of the page, you can observe a button named Create my access token. Click on it to generate the access token.
+
+e) Finally, click on the Test OAuth button which is on the right side top of the page. This will lead to a page which displays your Consumer key, Consumer secret, Access token, and Access token secret. Copy these details. These are useful to configure the agent in Flume.
+---------------------------------------------------------------------
