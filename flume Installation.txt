@@ -1,7 +1,5 @@
 FLUME INSTALLATION
-
 ---------------------------------------------------------------------------------------------------
-
 1)wget  https://www-eu.apache.org/dist/flume/1.9.0/apache-flume-1.9.0-bin.tar.gz
 ---------------------------------------------------------------
 Step 2 - Creating flume directory.
@@ -18,13 +16,13 @@ Step 5 - Change the directory to /home/hduser/Desktop , In my case the downloade
 
 $ cd /home/hduser/Desktop/
 -----------------------------------------------------------------------------------
-Step 6 - Untar the apache-flume-1.6.0-bin.tar.gz file.
+Step 6 - Untar the apache-flume-1.9.0-bin.tar.gz file.
 
-$ tar xzf apache-flume-1.6.0-bin.tar.gz
+$ tar xzf apache-flume-1.9.0-bin.tar.gz
 ------------------------------------------------------------------------------------
-Step 7 - Move the contents of apache-flume-1.6.0-bin folder to /usr/local/flume
+Step 7 - Move the contents of apache-flume-1.9.0-bin folder to /usr/local/flume
 
-$ mv apache-flume-1.6.0-bin/* /usr/local/flume
+$ mv apache-flume-1.9.0-bin/* /usr/local/flume
 -------------------------------------------------------------------------------------
 Step 8 - Edit $HOME/.bashrc file by adding the flume path.
 
@@ -56,7 +54,7 @@ $ gedit flume-env.sh
 ------------------------------------------------------------------------------------------
 Step 13 - Add java path to flume-env.sh file. Save and Close.
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-i386
 
 --------------------------------------------------------------------------------------------
 Step 14 - Copy the default flume-conf.properties.template to flume-conf.properties
@@ -70,6 +68,12 @@ $ cd $FLUME_HOME/bin
 Step 16 - Verify Installation
 
 $ ./flume-ng version
+-----------------------------------------------
+install 1.8
+sudo -E add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo update-alternatives --config java
 ---------------------------------------------------------------------------------------------
 http://flume.praveendeshmane.co.in/flume/flume-collecting-twitter-data.jsp
 ---------------------------------------------------------------------------------------------------
@@ -86,3 +90,7 @@ d) Under keys and Access Tokens tab at the bottom of the page, you can observe a
 
 e) Finally, click on the Test OAuth button which is on the right side top of the page. This will lead to a page which displays your Consumer key, Consumer secret, Access token, and Access token secret. Copy these details. These are useful to configure the agent in Flume.
 ---------------------------------------------------------------------
+wget http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-linux-x64.tar.gz
+----------------------------
+
+
