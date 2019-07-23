@@ -1,9 +1,11 @@
 http://flume.praveendeshmane.co.in/flume/flume-1-6-0-installation-on-ubuntu-14-04.jsp
+-------------------------------
+jdk1.7
 -------------------------------------------------------------
 
 FLUME INSTALLATION
 ---------------------------------------------------------------------------------------------------
-1)wget  https://www-eu.apache.org/dist/flume/1.9.0/apache-flume-1.9.0-bin.tar.gz
+1)wget  http://archive.apache.org/dist/flume/1.6.0/apache-flume-1.6.0-bin.tar.gz 
 ---------------------------------------------------------------
 Step 2 - Creating flume directory.
 
@@ -23,9 +25,9 @@ Step 6 - Untar the apache-flume-1.9.0-bin.tar.gz file.
 
 $ tar xzf apache-flume-1.9.0-bin.tar.gz
 ------------------------------------------------------------------------------------
-Step 7 - Move the contents of apache-flume-1.9.0-bin folder to /usr/local/flume
+Step 7 - Move the contents of apache-flume-1.6.0-bin folder to /usr/local/flume
 
-$ mv apache-flume-1.9.0-bin/* /usr/local/flume
+$ mv apache-flume-1.6.0-bin/* /usr/local/flume
 -------------------------------------------------------------------------------------
 Step 8 - Edit $HOME/.bashrc file by adding the flume path.
 
@@ -57,7 +59,7 @@ $ gedit flume-env.sh
 ------------------------------------------------------------------------------------------
 Step 13 - Add java path to flume-env.sh file. Save and Close.
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-i386
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 
 --------------------------------------------------------------------------------------------
 Step 14 - Copy the default flume-conf.properties.template to flume-conf.properties
