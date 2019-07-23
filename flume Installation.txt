@@ -1,3 +1,6 @@
+http://flume.praveendeshmane.co.in/flume/flume-1-6-0-installation-on-ubuntu-14-04.jsp
+-------------------------------------------------------------
+
 FLUME INSTALLATION
 ---------------------------------------------------------------------------------------------------
 1)wget  https://www-eu.apache.org/dist/flume/1.9.0/apache-flume-1.9.0-bin.tar.gz
