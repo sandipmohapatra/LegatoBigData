@@ -23,7 +23,7 @@ $ cd /home/hduser/Desktop/
 -----------------------------------------------------------------------------------
 Step 6 - Untar the apache-flume-1.9.0-bin.tar.gz file.
 
-$ tar xzf apache-flume-1.9.0-bin.tar.gz
+$ tar xzf apache-flume-1.6.0-bin.tar.gz
 ------------------------------------------------------------------------------------
 Step 7 - Move the contents of apache-flume-1.6.0-bin folder to /usr/local/flume
 
