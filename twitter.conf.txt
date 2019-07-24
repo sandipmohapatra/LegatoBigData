@@ -1,0 +1,28 @@
+# Naming the components on the current agent.
+TwitterAgent.sources = Twitter
+TwitterAgent.channels = MemChannel
+TwitterAgent.sinks = HDFS
+TwitterAgent.sources.Twitter.channels=MemChannel
+TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
+
+# Describing/Configuring the source
+
+TwitterAgent.sources.Twitter.consumerKey = MlTTJAG6n7v4hfoAlI7tebl8T
+TwitterAgent.sources.Twitter.consumerSecret = pDEac6mzBiMis7PhOVgGTFGYayiMetCYZeHzVuTi8u1zEZmXkt
+TwitterAgent.sources.Twitter.accessToken = 778890912491409408-vCx6UcSGrsOACKxSpxn0uu6PyMuVcGH
+TwitterAgent.sources.Twitter.accessTokenSecret = 2zOqVj46clBuLeN9H9HV7CeQP1rJVQEKsjSk3vYrdS3rU
+
+TwitterAgent.sources.Twitter.keywords = hadoop,hdfs,trump donald,modi,bjp,chennai
+# Describing/Configuring the sink
+TwitterAgent.sinks.HDFS.channel=MemChannel
+TwitterAgent.sinks.HDFS.type=hdfs
+TwitterAgent.sinks.HDFS.hdfs.path=hdfs://localhost:54310/user/twitter
+TwitterAgent.sinks.HDFS.hdfs.fileType=DataStream
+TwitterAgent.sinks.HDFS.hdfs.writeformat=Text
+TwitterAgent.sinks.HDFS.hdfs.batchSize=1000
+TwitterAgent.sinks.HDFS.hdfs.rollSize=0
+TwitterAgent.sinks.HDFS.hdfs.rollCount=10000
+TwitterAgent.sinks.HDFS.hdfs.rollInterval=600
+TwitterAgent.channels.MemChannel.type=memory
+TwitterAgent.channels.MemChannel.capacity=10000
+TwitterAgent.channels.MemChannel.transactionCapacity=100
