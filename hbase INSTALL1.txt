@@ -1,0 +1,50 @@
+HOW TO INSTALL HBASE ON UBUNTU
+Step 1: Downloading the tar file of HBASE and extract it.
+Command: wget http://mirror.tcpdiag.net/apache/hbase/hbase-0.90.6/hbase-
+0.90.6.tar.gz
+Command: tar -xzf hbase-0.90.6.tar.gz
+Step 2: Create a folder
+Command: mkdir hbaseStorage
+Step 3: Change the folder
+Command: cd hbase-0.90.6/
+Step 4: Edit the hbase-site.xml
+Command: vi conf/hbase-site.xml
+Copy the below statements into that file
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+<property>
+<name>hbase.rootdir</name>
+<value>file:///home/ubuntu/hbaseStorage/hbase</value>
+</property>
+<property>
+<name>hbase.zookeeper.property.dataDir</name>
+<value>/hbaseStorage/zookeeper</value>
+</property>
+</configuration>
+Note: By default, hbase.rootdir is set to /tmp/hbase-${user.name} and similarly so for
+the default ZooKeeper data location which means you'll lose all your data whenever
+your server reboots unless you change it (Most operating systems clear /tmp on
+restart).
+Step 5: Start HBASE
+Command:./bin/start-hbase.sh
+Step 6: To check if HBASE is working
+Command: bin/hbase shell
+
+=============
+
+
+Check your IP setup:
+One of the weired problem occures is loopback IP problem. By default when you open hosts file in /etc/hosts, you see something like,
+
+127.0.0.1 localhost
+127.0.1.1 <server fqn> <server name, as in /etc/hostname>
+
+now, change second line to,
+
+127.0.0.1 localhost  
+127.0.0.1 (name of your computer)
+
+======
+
+

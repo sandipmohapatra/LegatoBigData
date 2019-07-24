@@ -1,0 +1,227 @@
+hduser@ubuntu:/usr/local$ sudo wget https://archive.apache.org/dist/hbase/hbase-0.94.17/hbase-0.94.17.tar.gz
+
+hduser@ubuntu:/usr/local$ sudo tar -xzvf hbase-0.94.17.tar.gz
+
+hduser@ubuntu:/usr/local$ ls -ltr
+total 250464
+drwxrwxrwx 15 hduser hadoop     4096 Mar 21  2013 pig
+-rw-r--r--  1 root   root   58433159 Mar 21  2013 pig-0.11.1.tar.gz
+drwxr-xr-x  9 hduser hadoop     4096 Jul 22  2013 sqoop
+-rw-r--r--  1 root   root    5266542 Jul 30  2013 sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz
+drwxr-xr-x 10 xyz    xyz        4096 Feb 18  2014 hbase-0.94.17
+drwxr-xr-x 10 hduser hadoop     4096 Feb 20  2014 zookeeper
+-rw-r--r--  1 root   root   58592781 Feb 25  2014 hbase-0.94.17.tar.gz
+-rw-r--r--  1 root   root   63851630 Nov  6  2014 hadoop-1.2.1.tar.gz
+-rw-r--r--  1 root   root   52550402 May 20  2015 apache-flume-1.6.0-bin.tar.gz
+-rw-r--r--  1 root   root   17699306 Jan 10  2016 zookeeper-3.4.6.tar.gz
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 src
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 sbin
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 include
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 games
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 etc
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 bin
+drwxr-xr-x  4 root   root       4096 Aug  3 08:38 lib
+drwxr-xr-x  7 root   root       4096 Aug  3 08:43 share
+lrwxrwxrwx  1 root   root          9 Nov 19 04:15 man -> share/man
+drwxr-xr-x 16 hduser hadoop     4096 Nov 30 18:45 hadoop
+-rw-r--r--  1 root   root       1375 Jan  4 21:01 wget-log
+drwxr-xr-x  9 hduser hadoop     4096 Jan  7 21:35 hive
+drwxr-xr-x  7 hduser hadoop     4096 Jan 23 18:56 flume
+hduser@ubuntu:/usr/local$ 
+
+hduser@ubuntu:/usr/local$ sudo mv hbase-0.94.17 hbase
+hduser@ubuntu:/usr/local$ ls -ltr
+total 250464
+drwxrwxrwx 15 hduser hadoop     4096 Mar 21  2013 pig
+-rw-r--r--  1 root   root   58433159 Mar 21  2013 pig-0.11.1.tar.gz
+drwxr-xr-x  9 hduser hadoop     4096 Jul 22  2013 sqoop
+-rw-r--r--  1 root   root    5266542 Jul 30  2013 sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz
+drwxr-xr-x 10 xyz    xyz        4096 Feb 18  2014 hbase
+drwxr-xr-x 10 hduser hadoop     4096 Feb 20  2014 zookeeper
+-rw-r--r--  1 root   root   58592781 Feb 25  2014 hbase-0.94.17.tar.gz
+-rw-r--r--  1 root   root   63851630 Nov  6  2014 hadoop-1.2.1.tar.gz
+-rw-r--r--  1 root   root   52550402 May 20  2015 apache-flume-1.6.0-bin.tar.gz
+-rw-r--r--  1 root   root   17699306 Jan 10  2016 zookeeper-3.4.6.tar.gz
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 src
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 sbin
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 include
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 games
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 etc
+drwxr-xr-x  2 root   root       4096 Aug  3 08:25 bin
+drwxr-xr-x  4 root   root       4096 Aug  3 08:38 lib
+drwxr-xr-x  7 root   root       4096 Aug  3 08:43 share
+lrwxrwxrwx  1 root   root          9 Nov 19 04:15 man -> share/man
+drwxr-xr-x 16 hduser hadoop     4096 Nov 30 18:45 hadoop
+-rw-r--r--  1 root   root       1375 Jan  4 21:01 wget-log
+drwxr-xr-x  9 hduser hadoop     4096 Jan  7 21:35 hive
+drwxr-xr-x  7 hduser hadoop     4096 Jan 23 18:56 flume
+hduser@ubuntu:/usr/local$ 
+hduser@ubuntu:/usr/local$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-oracle
+hduser@ubuntu:/usr/local$ 
+hduser@ubuntu:/usr/local$ sudo chown -R hduser:hadoop hbase
+hduser@ubuntu:/usr/local$ ls -ltr
+total 250464
+drwxrwxrwx 15 hduser hadoop     4096 Mar 21  2013 pig
+-rw-r--r--  1 root   root   58433159 Mar 21  2013 pig-0.11.1.tar.gz
+drwxr-xr-x  9 hduser hadoop     4096 Jul 22  2013 sqoop
+-rw-r--r--  1 root   root    5266542 Jul 30  2013 sqoop-1.4.4.bin__hadoop-1.0.0.tar.gz
+drwxr-xr-x 10 hduser hadoop     4096 Feb 18  2014 hbase
+
+hduser@ubuntu:/usr/local$ 
+hduser@ubuntu:/usr/local/hbase/conf$ ls -ltr
+total 28
+-rw-r--r-- 1 hduser hadoop   10 Feb 18  2014 regionservers
+-rw-r--r-- 1 hduser hadoop 2711 Feb 18  2014 log4j.properties
+-rw-r--r-- 1 hduser hadoop  983 Feb 18  2014 hbase-site.xml
+-rw-r--r-- 1 hduser hadoop 2250 Feb 18  2014 hbase-policy.xml
+-rw-r--r-- 1 hduser hadoop 6178 Feb 18  2014 hbase-env.sh
+-rw-r--r-- 1 hduser hadoop 2971 Feb 18  2014 hadoop-metrics.properties
+hduser@ubuntu:/usr/local/hbase/conf$ sudo nano hbase-env.sh
+export $JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export HBASE_REGIONSERVERS=$HBASE_HOME/conf/regionservers
+export HBASE_MANAGES_ZK=true
+
+hduser@ubuntu:/usr/local/hbase/conf$ sudo nano ~/.bashrc
+
+export HBASE_HOME=/usr/local/hbase             
+export PATH=$PATH:$HBASE_HOME/bin
+
+
+Open conf/hbase-site.xml and enter the following properties –
+<configuration>
+<property>
+<name>hbase.rootdir</name>
+<value>hdfs://localhost:54310/hbase</value>
+</property>
+<property>
+<name>hbase.cluster.distributed</name>
+<value>true</value>
+</property>
+<property>
+<name>hbase.zookeeper.quorum</name>
+<value>localhost</value>
+</property>
+<property>
+<name>hbase.zookeeper.property.clientPort</name>
+<value>2181</value>
+</property>
+<property>
+<name>dfs.replication</name>
+<value>1</value>
+</property>
+<property>
+<name>hbase.master</name>
+<value>localhost:60000</value>
+</property>
+<property>
+<name>hbase.zookeeper.property.dataDir</name>
+<value>hdfs://localhost:54310/zookeeper</value>
+</property>
+</configuration>
+By default, hbase.rootdir is set to /tmp/hbase-${user.name} which means you’ll lose all your data whenever your server reboots unless you change it (Most operating systems clear /tmp on restart). Hence, change it.
+
+hduser@ubuntu:/usr/local/hbase/conf$ jps
+3214 Jps
+hduser@ubuntu:/usr/local/hbase/conf$ start-all.sh 
+starting namenode, logging to /usr/local/hadoop/libexec/../logs/hadoop-hduser-namenode-ubuntu.out
+localhost: starting datanode, logging to /usr/local/hadoop/libexec/../logs/hadoop-hduser-datanode-ubuntu.out
+localhost: starting secondarynamenode, logging to /usr/local/hadoop/libexec/../logs/hadoop-hduser-secondarynamenode-ubuntu.out
+starting jobtracker, logging to /usr/local/hadoop/libexec/../logs/hadoop-hduser-jobtracker-ubuntu.out
+localhost: starting tasktracker, logging to /usr/local/hadoop/libexec/../logs/hadoop-hduser-tasktracker-ubuntu.out
+hduser@ubuntu:/usr/local/hbase/conf$ jps
+3808 TaskTracker
+3873 Jps
+3282 NameNode
+3572 SecondaryNameNode
+3431 DataNode
+3661 JobTracker
+hduser@ubuntu:/usr/local/hbase/conf$ cd ..
+hduser@ubuntu:/usr/local/hbase$ cd bin/
+hduser@ubuntu:/usr/local/hbase/bin$ ls -ltr
+total 116
+-rwxr-xr-x 1 hduser hadoop  1924 Feb 18  2014 zookeepers.sh
+-rwxr-xr-x 1 hduser hadoop  2556 Feb 18  2014 stop-hbase.sh
+-rwxr-xr-x 1 hduser hadoop  1901 Feb 18  2014 start-hbase.sh
+-rwxr-xr-x 1 hduser hadoop  5483 Feb 18  2014 rolling-restart.sh
+drwxr-xr-x 2 hduser hadoop  4096 Feb 18  2014 replication
+-rwxr-xr-x 1 hduser hadoop  4453 Feb 18  2014 region_status.rb
+-rwxr-xr-x 1 hduser hadoop  2437 Feb 18  2014 regionservers.sh
+-rwxr-xr-x 1 hduser hadoop 15715 Feb 18  2014 region_mover.rb
+-rwxr-xr-x 1 hduser hadoop  2327 Feb 18  2014 master-backup.sh
+-rwxr-xr-x 1 hduser hadoop  1751 Feb 18  2014 local-regionservers.sh
+-rwxr-xr-x 1 hduser hadoop  1697 Feb 18  2014 local-master-backup.sh
+-rwxr-xr-x 1 hduser hadoop  5609 Feb 18  2014 hirb.rb
+-rwxr-xr-x 1 hduser hadoop   876 Feb 18  2014 hbase-jruby
+-rwxr-xr-x 1 hduser hadoop  1659 Feb 18  2014 hbase-daemons.sh
+-rwxr-xr-x 1 hduser hadoop  5429 Feb 18  2014 hbase-daemon.sh
+-rwxr-xr-x 1 hduser hadoop  4039 Feb 18  2014 hbase-config.sh
+-rwxr-xr-x 1 hduser hadoop 12015 Feb 18  2014 hbase
+-rwxr-xr-x 1 hduser hadoop  4144 Feb 18  2014 graceful_stop.sh
+-rwxr-xr-x 1 hduser hadoop  1715 Feb 18  2014 get-active-master.rb
+hduser@ubuntu:/usr/local/hbase/bin$ start-hbase.sh 
+localhost: starting zookeeper, logging to /usr/local/hbase/bin/../logs/hbase-hduser-zookeeper-ubuntu.out
+starting master, logging to /usr/local/hbase/logs/hbase-hduser-master-ubuntu.out
+localhost: starting regionserver, logging to /usr/local/hbase/bin/../logs/hbase-hduser-regionserver-ubuntu.out
+hduser@ubuntu:/usr/local/hbase/bin$ jps
+3808 TaskTracker
+3282 NameNode
+4467 HRegionServer
+3572 SecondaryNameNode
+4295 HMaster
+3431 DataNode
+4556 Jps
+3661 JobTracker
+4238 HQuorumPeer
+hduser@ubuntu:/usr/local/hbase/bin$ 
+hduser@ubuntu:/usr/local/hbase/bin$ hbase version
+17/01/27 10:15:18 INFO util.VersionInfo: HBase 0.94.17
+17/01/27 10:15:18 INFO util.VersionInfo: Subversion https://svn.apache.org/repos/asf/hbase/tags/0.94.17RC1 -r 1569509
+17/01/27 10:15:18 INFO util.VersionInfo: Compiled by jenkins on Tue Feb 18 22:25:31 UTC 2014
+hduser@ubuntu:/usr/local/hbase/bin$ 
+
+
+hduser@ubuntu:/usr/local/hbase/bin$ hbase shell
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 0.94.17, r1569509, Tue Feb 18 22:25:31 UTC 2014
+
+hbase(main):001:0> create 'bike', 'mod'
+0 row(s) in 22.2840 seconds
+
+hbase(main):002:0> put 'bike', 'row1', 'mod:make', 'DUCATI'
+0 row(s) in 0.8350 seconds
+
+hbase(main):003:0> put 'bike', 'row1', 'mod:model', 'DUCATI MONSTER 1200 S'
+0 row(s) in 0.0880 seconds
+
+hbase(main):004:0> put 'bike', 'row1', 'mod:year', '2014'
+0 row(s) in 0.1240 seconds
+
+hbase(main):005:0> scan 'bike'
+ROW                             COLUMN+CELL                                                                                
+ row1                           column=mod:make, timestamp=1485541599678, value=DUCATI                                     
+ row1                           column=mod:model, timestamp=1485541719389, value=DUCATI MONSTER 1200 S                     
+ row1                           column=mod:year, timestamp=1485541758649, value=2014                                       
+1 row(s) in 0.3920 seconds
+
+hbase(main):006:0> disable 'bike'
+0 row(s) in 5.8600 seconds
+
+hbase(main):007:0> drop 'bike'
+0 row(s) in 2.3980 seconds
+
+hbase(main):008:0> 
+
+
+
+
+
+To use the web interfaces
+
+http://localhost:60010 for master
+http://localhost:60030 for region server
+
+This concludes the installation, configuration and testing of HBASE on pseudo-cluster mode.
+
+
