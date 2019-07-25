@@ -1,4 +1,3 @@
-
 Hive is a data warehouse system which is used to analyze structured data. It is built on the top of Hadoop. It was developed by Facebook.
 
 Hive provides the functionality of reading, writing, and managing large datasets residing in distributed storage. It runs SQL like queries called HQL (Hive query language) which gets internally converted to MapReduce jobs.
@@ -90,6 +89,29 @@ HIVE Partitioning
 
 Table partitioning means dividing table into some parts based on values of a particular column like date or country, segregate the records into different files.
 It can be done on more than one column. The advantage of partioning is that since the data is stored in slices query response time is faster.
+-------------------------------------------------------------------
+Like SQL, HiveQL handles structured data only. By default, Hive has derby database to store the data in it. We can configure Hive with MySQL database. As mentioned HiveQL can handle only structured data. Data is eventually stored in files. There are some specific file formats which Hive can handle such as:
+
+TEXTFILE
+SEQUENCEFILE
+RCFILE
+ORCFILE
+
+---------------------------------------
+create table table_name (schema of the table) row format delimited fields terminated by ',' | stored as TEXTFILE.
+---------------------------------------------------
+create table table_name (schema of the table) row format delimited fileds terminated by ',' | stored as SEQUENCEFILE
+---------------------------------------------------
+create table olympic_sequencefile(athelete STRING,age INT,country STRING,year STRING,closing STRING,sport STRING,gold INT,silver INT,bronze INT,total INT) row format delimited fields terminated by '\t' stored as sequencefile.
+---------------------------------------------------------------------------------------------------------
+describe olympic_sequencefile;
+----------------------------------------------------
+SELECT * FROM olympic;
+--------------------------------------------------------
+create table table_name (schema of the table) row format delimited fields terminated by ',' | stored as RCFILE
+-----------------------------------------------------------------------------------
+create table olympic_orcfile(athelete STRING,age INT,country STRING,year STRING,closing STRING,sport STRING,gold INT,silver INT,bronze INT,total INT) row format delimited fields terminated by '\t' stored as orcfile;
+--------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------
 CREATE TABLE STUDENT (ROLLNO INT, NAME STRING) PARTITIONED BY (STREAM STRING);  
@@ -212,7 +234,7 @@ OK
 
 ---------------------------------------------------------------------------------------
 Date Function
-
+----------------------------------------------------
 hive> select current_timestamp();
 OK
 2017-10-01 00:54:14.736
@@ -258,4 +280,23 @@ hive> select from_unixtime(unix_timestamp(current_date()), 'yyyymmdd');
 OK
 20170001
 Time taken: 0.078 seconds, Fetched: 1 row(s) 
-------------------------------------------------------------------------------------      
+------------------------------------------------------------------------------------  
+Impala massively improves on the performance parameters as it eliminates the need to migrate huge data sets to dedicated processing systems or convert data formats prior to analysis. Salient features of Impala include:
+
+1)Hadoop Distributed File System (HDFS) and Apache HBase storage support
+2)Recognizes Hadoop file formats, text, LZO, SequenceFile, Avro, RCFile and Parquet
+Supports Hadoop Security (Kerberos authentication)
+3)Fine – grained, role-based authorization with Apache Sentry
+4)Can easily read metadata, ODBC driver and SQL syntax from Apache Hive
+-----------------------------------------------------------------------------------------------------------------------
+Apache Hive
+Initially developed by Facebook, Apache Hive is a data warehouse infrastructure build over Hadoop platform for performing data intensive tasks such as querying, analysis, processing and visualization. 
+Apache Hive is versatile in its usage as it supports analysis of huge datasets stored in Hadoop’s HDFS and other compatible file systems such as Amazon S3. To keep the traditional database query designers interested, it provides an SQL – like language (HiveQL) with schema on read and transparently converts queries to MapReduce, Apache Tez and Spark jobs. Other features of Hive include:
+
+Indexing for accelerated processing
+------------------------------------------------------------
+1)Support for different storage types such as plain text, RCFile, HBase, ORC and others
+Metadata storage in RDBMS, bringing down time to perform semantic checks during query execution
+2)Has SQL like queries that get implicitly converted into MapReduce, Tez or Spark jobs
+Familiar built in user defined functions (UDFs) to manipulate strings, dates and other data – mining tools.
+-------------------------------------------------------------------------------------    
