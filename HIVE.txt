@@ -288,15 +288,4 @@ Impala massively improves on the performance parameters as it eliminates the nee
 Supports Hadoop Security (Kerberos authentication)
 3)Fine – grained, role-based authorization with Apache Sentry
 4)Can easily read metadata, ODBC driver and SQL syntax from Apache Hive
------------------------------------------------------------------------------------------------------------------------
-Apache Hive
-Initially developed by Facebook, Apache Hive is a data warehouse infrastructure build over Hadoop platform for performing data intensive tasks such as querying, analysis, processing and visualization. 
-Apache Hive is versatile in its usage as it supports analysis of huge datasets stored in Hadoop’s HDFS and other compatible file systems such as Amazon S3. To keep the traditional database query designers interested, it provides an SQL – like language (HiveQL) with schema on read and transparently converts queries to MapReduce, Apache Tez and Spark jobs. Other features of Hive include:
-
-Indexing for accelerated processing
-------------------------------------------------------------
-1)Support for different storage types such as plain text, RCFile, HBase, ORC and others
-Metadata storage in RDBMS, bringing down time to perform semantic checks during query execution
-2)Has SQL like queries that get implicitly converted into MapReduce, Tez or Spark jobs
-Familiar built in user defined functions (UDFs) to manipulate strings, dates and other data – mining tools.
--------------------------------------------------------------------------------------    
+------------------------------------------------------------------------------------------------------
