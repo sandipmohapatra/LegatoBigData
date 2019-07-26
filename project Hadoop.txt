@@ -13,3 +13,13 @@ Once the dataset is handy, we first look at the hive query to count the number o
 
 reference :-
 https://stdatalabs.com/2017/03/mapreduce-vs-spark-aadhaar-dataset-analysis/
+
+---------------------------------------------------------------------------------------------
+project -2
+
+# TopN-Records
+Finding top-N  records from a dataset using MapReduce.
+First we discuss the logic of finding top records from a dataset then we generalize it to some 'N'.
+
+reference :-
+https://github.com/sandipmohapatra/LegatoBigData
